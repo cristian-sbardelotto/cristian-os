@@ -6,3 +6,7 @@ html,
 body {
   @apply h-full;
 }
+
+body {
+  background: url(/bg.png) no-repeat center / cover;
+}

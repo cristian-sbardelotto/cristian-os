@@ -1,3 +1,5 @@
+import { OffPage } from './pages/Off';
+
 export function App() {
-  return <p className='bg-red-400'>Hello World!</p>;
+  return <OffPage />;
 }

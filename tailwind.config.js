@@ -2,7 +2,11 @@
 export default {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
-    extend: {},
+    extend: {
+      boxShadow: {
+        button: '0 7.2px 35.2px 0 #0000002e',
+      },
+    },
   },
   plugins: [],
 };

@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  font-family: Poppins, sans-serif;
+}
+
 html,
 body {
   @apply h-full;

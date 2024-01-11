@@ -10,6 +10,20 @@ export default {
       backgroundImage: {
         'off-screen': 'url(/dark-bg.png)',
       },
+      colors: {
+        'white-100': '#f5f5f5',
+      },
+      animation: {
+        appear: 'appear 0.7s',
+      },
+      keyframes: {
+        appear: {
+          '0%': {
+            transform: 'translateY(-10vh)',
+            opacity: 0,
+          },
+        },
+      },
     },
   },
   plugins: [],

@@ -6,6 +6,7 @@ export default {
       boxShadow: {
         button: '0 7.2px 35.2px 0 #0000002e',
         'button-light': '#ddd5d559 0 5px 80px;',
+        'profile-img': '0 28px 60px 0 rgba(0, 0, 0, 0.50)',
       },
       backgroundImage: {
         'off-screen': 'url(/dark-bg.png)',

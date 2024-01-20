@@ -6,7 +6,10 @@ import turnOffIcon from '/turn-off-icon.svg';
 export function OffPage() {
   return (
     <main className='h-full flex items-center justify-center bg-off-screen bg-center bg-no-repeat bg-cover'>
-      <Link to='/lock-screen'>
+      <Link
+        to='/lock-screen'
+        className='animate-appear'
+      >
         <Button
           className='px-14 py-8 hover:brightness-150 hover:shadow-button-light hover:scale-[1.01]'
           title='Turn On'

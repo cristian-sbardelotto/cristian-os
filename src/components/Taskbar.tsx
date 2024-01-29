@@ -1,22 +1,11 @@
 import { useState } from 'react';
 
+import { getCurrentDate } from '../utils/getCurrentDate';
+import { getCurrentTime } from '../utils/getCurrentTime';
+
 import startMenuIcon from '/start-menu-icon.svg';
 import wifiIcon from '/wifi-icon.svg';
 import notificationsIcon from '/notifications-icon.svg';
-
-const date = new Date();
-const currentDate = date.toLocaleDateString('en-US');
-
-function getCurrentTime() {
-  const date = new Date();
-  const hour = date.getHours();
-  const minute = date.getMinutes();
-
-  const currentHour = hour < 10 ? `0${hour}` : hour;
-  const currentMinute = minute < 10 ? `0${minute}` : minute;
-
-  return `${currentHour}:${currentMinute}`;
-}
 
 export function Taskbar() {
   const [currentTime, setCurrentTime] = useState(getCurrentTime());
@@ -45,7 +34,9 @@ export function Taskbar() {
 
         <div className='text-sm text-end tracking-wide'>
           <p className='font-sans cursor-default select-none'>{currentTime}</p>
-          <p className='font-sans cursor-default select-none'>{currentDate}</p>
+          <p className='font-sans cursor-default select-none'>
+            {getCurrentDate()}
+          </p>
         </div>
 
         <img

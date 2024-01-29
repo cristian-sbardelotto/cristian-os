@@ -28,7 +28,7 @@ export function Taskbar() {
   );
 
   return (
-    <footer className='p-4 flex items-center justify-between bg-[#2222] backdrop-blur-[50px]'>
+    <section className='p-4 flex items-center justify-between bg-[#2222] backdrop-blur-[50px]'>
       <img
         src={startMenuIcon}
         alt='Start Menu Icon'
@@ -55,6 +55,6 @@ export function Taskbar() {
           className='w-5 h-5'
         />
       </div>
-    </footer>
+    </section>
   );
 }

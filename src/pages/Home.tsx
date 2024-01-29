@@ -1,3 +1,5 @@
+import { Taskbar } from '../components/Taskbar';
+
 export function HomePage() {
-  return <p>HomePage</p>;
+  return <Taskbar />;
 }

@@ -22,6 +22,7 @@ export function Taskbar() {
         src={startMenuIcon}
         alt='Start Menu Icon'
         title='Start'
+        className='cursor-pointer hover:brightness-200 hover:shadow-start-menu transition-all duration-[500ms]'
       />
 
       <div className='flex items-center gap-4'>

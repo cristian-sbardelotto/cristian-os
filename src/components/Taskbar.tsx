@@ -7,7 +7,11 @@ import startMenuIcon from '/start-menu-icon.svg';
 import wifiIcon from '/wifi-icon.svg';
 import notificationsIcon from '/notifications-icon.svg';
 
-export function Taskbar() {
+type TaskbarProps = {
+  onStartClick: () => void;
+};
+
+export function Taskbar({ onStartClick }: TaskbarProps) {
   const [currentTime, setCurrentTime] = useState(getCurrentTime());
 
   const ONE_SECOND_IN_MILLISECONDS = 1000;
@@ -23,6 +27,7 @@ export function Taskbar() {
         alt='Start Menu Icon'
         title='Start'
         className='cursor-pointer hover:brightness-200 hover:shadow-start-menu transition-all duration-[500ms]'
+        onClick={onStartClick}
       />
 
       <div className='flex items-center gap-4'>

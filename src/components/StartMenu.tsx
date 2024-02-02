@@ -1,9 +1,13 @@
-import { SearchIcon, PowerIcon } from 'lucide-react';
+import { SearchIcon, PowerIcon, CircleUserRoundIcon } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-export function StartMenu() {
+type StartMenuProps = {
+  openApp: (app: string) => void;
+};
+
+export function StartMenu({ openApp }: StartMenuProps) {
   return (
-    <div className='absolute left-3 top-1/2 rounded-lg'>
+    <div className='absolute left-3 top-1/4 rounded-lg'>
       <section className='p-11 backdrop-blur-[250px] rounded-t-lg'>
         <div className='relative mb-10'>
           <SearchIcon
@@ -18,10 +22,16 @@ export function StartMenu() {
         </div>
 
         <div className='mb-10'>
-          <h3 className='font-bold'>Pinned Apps</h3>
+          <h3 className='font-bold mb-8'>Pinned Apps</h3>
 
           <ul className='flex gap-11 items-center'>
-            <li>Item1</li>
+            <li
+              className='flex flex-col items-center'
+              onClick={() => openApp('about-me')}
+            >
+              <CircleUserRoundIcon size={32} />
+              <p className='text-xs'>About me</p>
+            </li>
             <li>Item2</li>
             <li>Item3</li>
             <li>Item4</li>

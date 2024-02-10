@@ -1,13 +1,9 @@
 import { Application } from './Aplication';
 
-type AboutMeProps = {
-  onClose: () => void;
-};
-
-export function AboutMe({ onClose }: AboutMeProps) {
+export function AboutMe() {
   return (
     <Application.Root>
-      <Application.Header onClose={onClose}>About Me</Application.Header>
+      <Application.Header>About Me</Application.Header>
 
       <Application.Content>
         <p>Hey there! I’m Cristian Sbardelotto, a FullStack Developer.</p>

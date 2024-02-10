@@ -7,7 +7,7 @@ import { RecentProjects } from '../components/RecentProjects';
 import { Apps } from '../types/apps';
 
 export const apps: Record<Apps | 'none', ReactNode> = {
-  aboutMe: <AboutMe onClose={() => {}} />,
+  aboutMe: <AboutMe />,
   songs: <Songs />,
   games: <Games />,
   recentProjects: <RecentProjects />,

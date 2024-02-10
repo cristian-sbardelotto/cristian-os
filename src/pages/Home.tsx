@@ -1,21 +1,18 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 
 import { StartMenu } from '../components/StartMenu';
 import { Taskbar } from '../components/Taskbar';
 
+import { AppContext } from '../context/App';
 import { apps } from '../data/apps';
-import { Apps } from '../types/apps';
+// import { Apps } from '../types/apps';
 
 export function HomePage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [openedApp, setOpenedApp] = useState<Apps | 'none'>('none');
+  const { openedApp, openApp } = useContext(AppContext);
 
   function toggleMenu() {
     setIsMenuOpen(previous => !previous);
-  }
-
-  function openApp(app: Apps) {
-    setOpenedApp(app);
   }
 
   useEffect(() => {

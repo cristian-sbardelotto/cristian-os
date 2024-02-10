@@ -9,7 +9,7 @@ type StartMenuProps = {
 
 export function StartMenu({ openApp }: StartMenuProps) {
   return (
-    <div className='absolute left-3 top-1/4 rounded-lg'>
+    <div className='absolute left-3 top-1/4 rounded-lg z-50'>
       <section className='p-11 backdrop-blur-[250px] rounded-t-lg'>
         <div className='relative mb-10'>
           <SearchIcon

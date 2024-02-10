@@ -6,11 +6,9 @@ import { Taskbar } from '../components/Taskbar';
 import { apps } from '../data/apps';
 import { Apps } from '../types/apps';
 
-type AppsProps = Apps;
-
 export function HomePage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [openedApp, setOpenedApp] = useState<AppsProps | 'none'>('none');
+  const [openedApp, setOpenedApp] = useState<Apps | 'none'>('none');
 
   function toggleMenu() {
     setIsMenuOpen(previous => !previous);

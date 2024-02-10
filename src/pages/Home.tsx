@@ -3,15 +3,20 @@ import { useEffect, useState } from 'react';
 import { StartMenu } from '../components/StartMenu';
 import { Taskbar } from '../components/Taskbar';
 
+import { apps } from '../data/apps';
+import { Apps } from '../types/apps';
+
+type AppsProps = Apps;
+
 export function HomePage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [openedApp, setOpenedApp] = useState('');
+  const [openedApp, setOpenedApp] = useState<AppsProps | 'none'>('none');
 
   function toggleMenu() {
     setIsMenuOpen(previous => !previous);
   }
 
-  function openApp(app: string) {
+  function openApp(app: Apps) {
     setOpenedApp(app);
   }
 
@@ -23,7 +28,7 @@ export function HomePage() {
     <>
       {isMenuOpen && <StartMenu openApp={openApp} />}
 
-      {openedApp === 'about-me' && <div>about me</div>}
+      {openedApp !== 'none' && apps[openedApp]}
 
       <footer className='absolute bottom-0 w-full'>
         <Taskbar onStartClick={toggleMenu} />

@@ -16,7 +16,7 @@ export function ApplicationHeader({ children }: ApplicationHeaderProps) {
       <h2 className='text-2xl font-semibold'>{children}</h2>
 
       <XIcon
-        className='cursor-pointer'
+        className='cursor-pointer rounded-md hover:bg-red-400 hover:bg-opacity-30 transition-colors'
         onClick={closeApp}
       />
     </header>

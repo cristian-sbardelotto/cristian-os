@@ -1,4 +1,4 @@
-import { Application } from './Aplication';
+import { Application } from './Application';
 
 export function AboutMe() {
   return (

@@ -1,7 +1,11 @@
+import { Application } from './Application';
+
 export function Songs() {
   return (
-    <div>
-      <p>Songs</p>
-    </div>
+    <Application.Root>
+      <Application.Header>Top Songs</Application.Header>
+
+      <Application.Content>Songs</Application.Content>
+    </Application.Root>
   );
 }

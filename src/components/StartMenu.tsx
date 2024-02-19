@@ -1,5 +1,10 @@
 import { Link } from 'react-router-dom';
-import { SearchIcon, PowerIcon, CircleUserRoundIcon } from 'lucide-react';
+import {
+  SearchIcon,
+  PowerIcon,
+  CircleUserRoundIcon,
+  ListMusicIcon,
+} from 'lucide-react';
 
 import { Apps } from '../types/apps';
 
@@ -34,7 +39,15 @@ export function StartMenu({ openApp }: StartMenuProps) {
               <CircleUserRoundIcon size={32} />
               <p className='text-xs'>About me</p>
             </li>
-            <li>Item2</li>
+
+            <li
+              className='flex flex-col items-center'
+              onClick={() => openApp('songs')}
+            >
+              <ListMusicIcon size={32} />
+              <p className='text-xs'>Top Songs</p>
+            </li>
+
             <li>Item3</li>
             <li>Item4</li>
             <li>Item5</li>

@@ -34,7 +34,7 @@ export function AboutMe() {
         <p className='mt-4'>
           Check out my portfolio right here:{' '}
           <a
-            className='underline'
+            className='underline hover:brightness-50 transition-all duration-500'
             href='https://bit.ly/portfolioSbardelotto'
             target='_blank'
             rel='noreferrer'

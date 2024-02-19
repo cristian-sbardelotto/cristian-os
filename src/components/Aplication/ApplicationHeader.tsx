@@ -15,7 +15,10 @@ export function ApplicationHeader({ children }: ApplicationHeaderProps) {
     <header className='flex justify-between items-center'>
       <h2 className='text-2xl font-semibold'>{children}</h2>
 
-      <XIcon onClick={closeApp} />
+      <XIcon
+        className='cursor-pointer'
+        onClick={closeApp}
+      />
     </header>
   );
 }

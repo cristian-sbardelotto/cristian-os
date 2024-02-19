@@ -5,7 +5,6 @@ import { Taskbar } from '../components/Taskbar';
 
 import { AppContext } from '../context/App';
 import { apps } from '../data/apps';
-// import { Apps } from '../types/apps';
 
 export function HomePage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

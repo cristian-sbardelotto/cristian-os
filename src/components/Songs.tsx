@@ -24,30 +24,37 @@ export function Songs() {
     getTracks();
   }, []);
 
-  console.log(tracks);
-
   return (
     <Application.Root>
       <Application.Header>Your Top Songs</Application.Header>
 
       <Application.Content>
-        <ul>
+        <ul className='list-none space-y-8 px-6'>
           {tracks?.map(track => (
-            <li key={track.id}>
+            <li
+              className='flex items-center gap-6'
+              key={track.id}
+            >
               <img
                 src={track.albumImage}
                 alt={track.name}
+                className='h-20'
               />
 
-              <a
-                href={track.url}
-                target='_blank'
-                rel='noreferrer'
-              >
-                <h4>{track.name}</h4>
-              </a>
+              <div className='h-full flex flex-col justify-around'>
+                <a
+                  href={track.url}
+                  target='_blank'
+                  rel='noreferrer'
+                  className='hover:underline'
+                >
+                  <h4 className='group-hover:underline font-semibold break-all'>
+                    {track.name}
+                  </h4>
+                </a>
 
-              <p>{track.artists}</p>
+                <p className='text-sm font-light break-all'>{track.artists}</p>
+              </div>
             </li>
           ))}
         </ul>

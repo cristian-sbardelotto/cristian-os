@@ -20,7 +20,7 @@ async function fetchSpotifyApi(endpoint: string, method: string) {
   const token = localStorage.getItem('token');
 
   if (!token) {
-    return alert('Você não está logado em sua conta Spotify!');
+    return alert('You are not logged in your Spotify account!');
   }
 
   const data = await fetch(`https://api.spotify.com/${endpoint}`, {

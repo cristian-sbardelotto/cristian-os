@@ -1,24 +1,20 @@
 import { useEffect } from 'react';
 
-const client_id = import.meta.env.VITE_SPOTIFY_CLIENT_ID;
-
 export function SpotifyCallback() {
   useEffect(() => {
-    const handleAuthorizationCallback = async () => {
+    async function handleAuthorizationCallback() {
       const params = new URLSearchParams(window.location.search);
       const authorizationCode = params.get('code');
+      const clientSecret = import.meta.env.VITE_SPOTIFY_CLIENT_SECRET;
+      const redirectUri = 'http://localhost:5173/auth';
+      const clientId = import.meta.env.VITE_SPOTIFY_CLIENT_ID;
 
-      // Informações da sua aplicação no Spotify Developer Dashboard
-      const client_secret = import.meta.env.VITE_SPOTIFY_CLIENT_SECRET;
-      const redirectUri = 'http://localhost:5173/auth'; // URL de redirecionamento definida no Spotify Developer Dashboard
-
-      // Objeto de dados para enviar na solicitação POST
       const data = {
         grant_type: 'authorization_code',
         code: authorizationCode,
         redirect_uri: redirectUri,
-        client_id,
-        client_secret,
+        client_id: clientId,
+        client_secret: clientSecret,
       };
 
       try {
@@ -31,26 +27,18 @@ export function SpotifyCallback() {
         });
 
         if (response.ok) {
-          const tokenData = await response.json();
-          console.log('Token de acesso:', tokenData.access_token);
+          const data = await response.json();
 
-          localStorage.removeItem('token');
-          localStorage.setItem('token', tokenData.access_token);
+          localStorage.setItem('token', data.access_token);
           location.href = 'http://localhost:5173/home';
-        } else {
-          console.error('Falha ao solicitar token de acesso');
         }
       } catch (error) {
         console.error('Erro ao solicitar token de acesso:', error);
       }
-    };
+    }
 
     handleAuthorizationCallback();
   }, []);
 
-  return (
-    <div>
-      <p>Processando autorização...</p>
-    </div>
-  );
+  return <p className='text-center text-xs'>Almost there...</p>;
 }

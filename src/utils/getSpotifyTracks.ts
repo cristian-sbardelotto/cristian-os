@@ -20,7 +20,7 @@ async function fetchSpotifyApi(endpoint: string, method: string) {
   const token = localStorage.getItem('token');
 
   if (!token) {
-    return alert('You are not logged in your Spotify account!');
+    return;
   }
 
   const data = await fetch(`https://api.spotify.com/${endpoint}`, {
@@ -34,8 +34,15 @@ async function fetchSpotifyApi(endpoint: string, method: string) {
 }
 
 export async function getTopTracks() {
+  const token = localStorage.getItem('token');
+
+  if (!token) {
+    location.href = 'http://localhost:5173/au';
+    return;
+  }
+
   const { items: topTracks } = (await fetchSpotifyApi(
-    'v1/me/top/tracks?time_range=long_term&limit=5',
+    'v1/me/top/tracks?time_range=short_term&limit=5',
     'GET'
   )) as TopTracksProps;
 

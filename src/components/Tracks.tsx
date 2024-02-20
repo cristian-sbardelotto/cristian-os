@@ -12,7 +12,7 @@ type TrackProps = {
   id: string;
 };
 
-export function Songs() {
+export function Tracks() {
   const [tracks, setTracks] = useState<TrackProps[] | undefined>([]);
 
   useEffect(() => {
@@ -26,7 +26,7 @@ export function Songs() {
 
   return (
     <Application.Root>
-      <Application.Header>Your Top Songs</Application.Header>
+      <Application.Header>Your Top Tracks</Application.Header>
 
       <Application.Content>
         <ul className='list-none space-y-8 px-6'>

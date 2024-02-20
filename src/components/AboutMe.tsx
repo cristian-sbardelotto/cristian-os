@@ -20,11 +20,11 @@ export function AboutMe() {
         </p>
 
         <p className='mt-4'>
-          As a young programmer, I got some &quot;default&quot; hobbies, such as
-          playing videogames (you can check out some of them on the Games App,
-          on Start Menu), listen to a lot of music, especially Eminem (you can
-          also see some of them on the Songs App), playing some football, and of
-          course, programming.
+          As a young programmer, I got some &quot;<i>default</i> &quot; hobbies,
+          such as playing videogames (you can check out some of them on the
+          Games App, on Start Menu), listen to a lot of music, especially Eminem
+          (you can also see some of your most listened tracks on the Tracks
+          App), playing some football, and of course, programming.
         </p>
 
         <p className='mt-4'>

@@ -42,10 +42,10 @@ export function StartMenu({ openApp }: StartMenuProps) {
 
             <li
               className='flex flex-col items-center'
-              onClick={() => openApp('songs')}
+              onClick={() => openApp('tracks')}
             >
               <ListMusicIcon size={32} />
-              <p className='text-xs'>Top Songs</p>
+              <p className='text-xs'>Your Top Tracks</p>
             </li>
 
             <li>Item3</li>

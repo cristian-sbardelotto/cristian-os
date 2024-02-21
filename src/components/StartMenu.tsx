@@ -14,9 +14,13 @@ type StartMenuProps = {
 
 export function StartMenu({ openApp }: StartMenuProps) {
   return (
-    <div className='absolute left-3 top-1/4 rounded-lg z-50'>
-      <section className='p-11 backdrop-blur-[250px] rounded-t-lg'>
-        <div className='relative mb-10'>
+    <div
+      className='absolute rounded-lg z-50
+        inset-0 top-5 px-4 lg:p-0 w-full
+      '
+    >
+      <section className='p-5 backdrop-blur-[250px] rounded-t-lg space-y-5'>
+        <div className='relative'>
           <SearchIcon
             className='absolute left-3 top-[25%]'
             size={17}
@@ -28,36 +32,64 @@ export function StartMenu({ openApp }: StartMenuProps) {
           />
         </div>
 
-        <div className='mb-10'>
+        <div>
           <h3 className='font-bold mb-8'>Pinned Apps</h3>
 
-          <ul className='flex gap-11 items-center'>
+          <ul className='flex gap-5 items-start flex-wrap'>
             <li
-              className='flex flex-col items-center'
+              className='w-[72px] h-[72px] flex flex-col items-center justify-center gap-2 cursor-pointer hover:bg-gray-200/20 transition-colors rounded-md'
               onClick={() => openApp('aboutMe')}
             >
               <CircleUserRoundIcon size={32} />
-              <p className='text-xs'>About me</p>
+              <p className='text-xs max-w-[10ch] text-center'>About me</p>
             </li>
 
             <li
-              className='flex flex-col items-center'
+              className='w-[72px] h-[72px] flex flex-col items-center justify-center gap-2 cursor-pointer hover:bg-gray-200/20 transition-colors rounded-md'
               onClick={() => openApp('tracks')}
             >
               <ListMusicIcon size={32} />
-              <p className='text-xs'>Your Top Tracks</p>
+              <p className='text-xs max-w-[10ch] text-center'>
+                Your Top Tracks
+              </p>
             </li>
 
-            <li>Item3</li>
-            <li>Item4</li>
-            <li>Item5</li>
+            <li
+              className='w-[72px] h-[72px] flex flex-col items-center justify-center gap-2 cursor-pointer hover:bg-gray-200/20 transition-colors rounded-md'
+              onClick={() => openApp('tracks')}
+            >
+              <ListMusicIcon size={32} />
+              <p className='text-xs max-w-[10ch] text-center'>
+                Your Top Tracks
+              </p>
+            </li>
+
+            <li
+              className='w-[72px] h-[72px] flex flex-col items-center justify-center gap-2 cursor-pointer hover:bg-gray-200/20 transition-colors rounded-md'
+              onClick={() => openApp('tracks')}
+            >
+              <ListMusicIcon size={32} />
+              <p className='text-xs max-w-[10ch] text-center'>
+                Your Top Tracks
+              </p>
+            </li>
+
+            <li
+              className='w-[72px] h-[72px] flex flex-col items-center justify-center gap-2 cursor-pointer hover:bg-gray-200/20 transition-colors rounded-md'
+              onClick={() => openApp('tracks')}
+            >
+              <ListMusicIcon size={32} />
+              <p className='text-xs max-w-[10ch] text-center'>
+                Your Top Tracks
+              </p>
+            </li>
           </ul>
         </div>
 
         <div>
           <h3 className='font-bold'>Pinned Apps</h3>
 
-          <ul className='flex gap-11 items-center'>
+          <ul className='flex gap-11 items-center flex-wrap'>
             <li>Item1</li>
             <li>Item2</li>
             <li>Item3</li>
@@ -67,7 +99,7 @@ export function StartMenu({ openApp }: StartMenuProps) {
         </div>
       </section>
 
-      <footer className='px-9 py-5 flex justify-between items-center bg-zinc-900 rounded-b-lg'>
+      <footer className='px-5 py-5 flex justify-between items-center bg-zinc-900 rounded-b-lg'>
         <div className='flex items-center gap-3'>
           <img
             src='https://github.com/cristian-sbardelotto.png'

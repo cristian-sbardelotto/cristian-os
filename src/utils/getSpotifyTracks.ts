@@ -23,14 +23,24 @@ async function fetchSpotifyApi(endpoint: string, method: string) {
     return;
   }
 
-  const data = await fetch(`https://api.spotify.com/${endpoint}`, {
-    headers: {
-      Authorization: `Bearer ${token}`,
-    },
-    method,
-  });
+  try {
+    const data = await fetch(`https://api.spotify.com/${endpoint}`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+      method,
+    });
 
-  return await data.json();
+    if (data.status === 401) {
+      localStorage.removeItem('token');
+      location.href = 'http://localhost:5173/au';
+      return;
+    }
+
+    return await data.json();
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 export async function getTopTracks() {

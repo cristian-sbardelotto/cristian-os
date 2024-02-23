@@ -17,7 +17,7 @@ export function StartMenu({ openApp }: StartMenuProps) {
   return (
     <div
       className='absolute rounded-lg z-50
-        inset-0 top-5 px-4 lg:p-0 w-full
+        inset-0 top-5 px-4 lg:p-0 w-full h-fit
       '
     >
       <section className='p-5 backdrop-blur-[250px] rounded-t-lg space-y-5'>

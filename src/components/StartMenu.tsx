@@ -5,6 +5,7 @@ import {
   CircleUserRoundIcon,
   ListMusicIcon,
   Gamepad2Icon,
+  GithubIcon,
 } from 'lucide-react';
 
 import { Apps } from '../types/apps';
@@ -67,7 +68,7 @@ export function StartMenu({ openApp }: StartMenuProps) {
               className='w-[72px] h-[72px] flex flex-col items-center justify-center gap-2 cursor-pointer hover:bg-gray-200/20 transition-colors rounded-md'
               onClick={() => openApp('recentProjects')}
             >
-              <ListMusicIcon size={32} />
+              <GithubIcon size={32} />
               <p className='text-xs max-w-[10ch] text-center'>My Recent Work</p>
             </li>
 

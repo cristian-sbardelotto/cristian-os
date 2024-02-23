@@ -4,6 +4,7 @@ import {
   PowerIcon,
   CircleUserRoundIcon,
   ListMusicIcon,
+  Gamepad2Icon,
 } from 'lucide-react';
 
 import { Apps } from '../types/apps';
@@ -56,32 +57,23 @@ export function StartMenu({ openApp }: StartMenuProps) {
 
             <li
               className='w-[72px] h-[72px] flex flex-col items-center justify-center gap-2 cursor-pointer hover:bg-gray-200/20 transition-colors rounded-md'
-              onClick={() => openApp('tracks')}
+              onClick={() => openApp('games')}
             >
-              <ListMusicIcon size={32} />
-              <p className='text-xs max-w-[10ch] text-center'>
-                Your Top Tracks
-              </p>
+              <Gamepad2Icon size={32} />
+              <p className='text-xs max-w-[10ch] text-center'>My Top Games</p>
             </li>
 
             <li
               className='w-[72px] h-[72px] flex flex-col items-center justify-center gap-2 cursor-pointer hover:bg-gray-200/20 transition-colors rounded-md'
-              onClick={() => openApp('tracks')}
+              onClick={() => openApp('recentProjects')}
             >
               <ListMusicIcon size={32} />
-              <p className='text-xs max-w-[10ch] text-center'>
-                Your Top Tracks
-              </p>
+              <p className='text-xs max-w-[10ch] text-center'>My Recent Work</p>
             </li>
 
-            <li
-              className='w-[72px] h-[72px] flex flex-col items-center justify-center gap-2 cursor-pointer hover:bg-gray-200/20 transition-colors rounded-md'
-              onClick={() => openApp('tracks')}
-            >
+            <li className='w-[72px] h-[72px] flex flex-col items-center justify-center gap-2 cursor-pointer hover:bg-gray-200/20 transition-colors rounded-md'>
               <ListMusicIcon size={32} />
-              <p className='text-xs max-w-[10ch] text-center'>
-                Your Top Tracks
-              </p>
+              <p className='text-xs max-w-[10ch] text-center'>My Discord</p>
             </li>
           </ul>
         </div>

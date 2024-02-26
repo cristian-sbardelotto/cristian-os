@@ -9,6 +9,7 @@ import {
 } from 'lucide-react';
 
 import { Apps } from '../types/apps';
+import { recommendedProjects } from '../data/projects';
 
 import discordIcon from '/discord-icon.svg';
 
@@ -94,14 +95,29 @@ export function StartMenu({ openApp }: StartMenuProps) {
         </div>
 
         <div>
-          <h3 className='font-bold'>Pinned Apps</h3>
+          <h3 className='font-bold mb-4'>Recommended Projects</h3>
 
-          <ul className='flex gap-11 items-center flex-wrap'>
-            <li>Item1</li>
-            <li>Item2</li>
-            <li>Item3</li>
-            <li>Item4</li>
-            <li>Item5</li>
+          <ul className='grid gap-y-4 overflow-y-scroll max-h-24 sm:grid-cols-2 sm:max-h-[initial] sm:overflow-y-auto'>
+            {recommendedProjects.map(project => (
+              <li key={project.id}>
+                <a
+                  href={project.url}
+                  target='_blank'
+                  rel='noreferrer'
+                  className='p-2 sm:w-fit flex items-center gap-2 rounded-2xl hover:bg-white/10 transition-colors duration-300'
+                >
+                  {project.icon}
+
+                  <div>
+                    <p>{project.name}</p>
+
+                    <p className='text-xs'>
+                      {project.technology} | {project.area}
+                    </p>
+                  </div>
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
       </section>

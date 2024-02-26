@@ -1,5 +1,7 @@
+import { v4 as randomUUID } from 'uuid';
+
 type GameProps = {
-  id: number;
+  id: string;
   name: string;
   tags: string[];
   extraTag?: string;
@@ -9,7 +11,7 @@ type GameProps = {
 
 export const games: GameProps[] = [
   {
-    id: 0,
+    id: randomUUID(),
     name: 'Brawlhalla',
     tags: ['Platform fighter', 'Multiplayer', 'Cross-Play'],
     extraTag: 'Stressful',
@@ -18,7 +20,7 @@ export const games: GameProps[] = [
       'https://static-cdn.jtvnw.net/ttv-boxart/460316_IGDB-285x380.jpg',
   },
   {
-    id: 1,
+    id: randomUUID(),
     name: 'Undertale',
     tags: ['Indie', 'RPG', 'Emotional narrative'],
     extraTag: 'OST',
@@ -27,7 +29,7 @@ export const games: GameProps[] = [
       'https://static-cdn.jtvnw.net/ttv-boxart/490713_IGDB-285x380.jpg',
   },
   {
-    id: 2,
+    id: randomUUID(),
     name: 'Cuphead',
     tags: ['Retro', 'Run-and-gun', 'Co-op'],
     extraTag: 'OST',
@@ -36,7 +38,7 @@ export const games: GameProps[] = [
       'https://static-cdn.jtvnw.net/ttv-boxart/459064_IGDB-285x380.jpg',
   },
   {
-    id: 3,
+    id: randomUUID(),
     name: 'Metal Gear Rising: Revengeance',
     tags: ['Hack-and-slash', 'Action-packed', 'Epic Boss Fights'],
     extraTag: 'OST',
@@ -45,7 +47,7 @@ export const games: GameProps[] = [
       'https://static-cdn.jtvnw.net/ttv-boxart/24208_IGDB-144x192.jpg',
   },
   {
-    id: 4,
+    id: randomUUID(),
     name: 'Grand Theft Auto V',
     tags: ['Open world', 'Multiplayer', 'Action'],
     extraTag: 'Classic',

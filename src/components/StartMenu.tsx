@@ -10,6 +10,8 @@ import {
 
 import { Apps } from '../types/apps';
 
+import discordIcon from '/discord-icon.svg';
+
 type StartMenuProps = {
   openApp: (app: Apps) => void;
 };
@@ -72,9 +74,21 @@ export function StartMenu({ openApp }: StartMenuProps) {
               <p className='text-xs max-w-[10ch] text-center'>My Recent Work</p>
             </li>
 
-            <li className='w-[72px] h-[72px] flex flex-col items-center justify-center gap-2 cursor-pointer hover:bg-gray-200/20 transition-colors rounded-md'>
-              <ListMusicIcon size={32} />
-              <p className='text-xs max-w-[10ch] text-center'>My Discord</p>
+            <li className='w-[72px] h-[72px] cursor-pointer hover:bg-gray-200/20 transition-colors rounded-md'>
+              <a
+                href='https://discord.com/users/669660510093967371'
+                target='_blank'
+                rel='noreferrer'
+                className='flex flex-col items-center justify-center gap-2'
+              >
+                <img
+                  src={discordIcon}
+                  alt='Discord Icon'
+                  className='h-10 w-10'
+                />
+
+                <p className='text-xs max-w-[10ch] text-center'>My Discord</p>
+              </a>
             </li>
           </ul>
         </div>

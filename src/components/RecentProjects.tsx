@@ -41,7 +41,7 @@ export function RecentProjects() {
           {projects.map(project => (
             <li
               key={project.id}
-              className='bg-white/10 rounded-2xl p-2 hover:scale-[1.03] transition-all duration-500'
+              className='bg-white/10 rounded-2xl p-2 hover:scale-[1.03] hover:bg-white/20 transition-all duration-300 lg:max-w-[800px] lg:p-6'
             >
               <a
                 target='_blank'
@@ -49,12 +49,12 @@ export function RecentProjects() {
                 href={project.html_url}
                 className='flex flex-col gap-3'
               >
-                <h4 className='flex items-center gap-1 text-lg font-semibold break-all hover:underline'>
+                <h4 className='flex items-center gap-1 text-lg font-semibold break-all hover:underline xl:text-xl'>
                   <GithubIcon />
                   {project.name}
                 </h4>
 
-                <p className='text-ellipsis whitespace-nowrap overflow-hidden'>
+                <p className='text-ellipsis whitespace-nowrap overflow-hidden lg:overflow-visible lg:whitespace-normal'>
                   {project.description}
                 </p>
 
@@ -62,14 +62,14 @@ export function RecentProjects() {
                   {project.topics && project.topics.length > 0 ? (
                     project.topics.slice(0, 3).map(topic => (
                       <span
-                        className='py-1 px-2 text-xs font-light break-all rounded-full bg-indigo-500 cursor-default'
+                        className='py-1 px-2 text-xs font-light break-all rounded-full bg-indigo-500 cursor-default lg:text-sm'
                         key={topic}
                       >
                         {topic}
                       </span>
                     ))
                   ) : (
-                    <span className='py-1 px-2 text-xs font-light break-all rounded-full bg-indigo-500 cursor-default'>
+                    <span className='py-1 px-2 text-xs font-light break-all rounded-full bg-gray-200/20 cursor-default lg:text-sm'>
                       No topics found
                     </span>
                   )}

@@ -2,6 +2,13 @@
 export default {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
+    screens: {
+      sm: '640px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1280px',
+      '2xl': '1536px',
+    },
     extend: {
       boxShadow: {
         button: '0 7.2px 35.2px 0 #0000002e',

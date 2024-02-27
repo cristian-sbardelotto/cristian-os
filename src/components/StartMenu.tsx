@@ -19,12 +19,8 @@ type StartMenuProps = {
 
 export function StartMenu({ openApp }: StartMenuProps) {
   return (
-    <div
-      className='absolute rounded-lg z-50
-        inset-0 top-5 px-4 lg:p-0 w-full h-fit
-      '
-    >
-      <section className='p-5 backdrop-blur-[250px] rounded-t-lg space-y-5'>
+    <div className='absolute rounded-lg z-50 inset-0 top-5 px-4 w-full h-fit md:pl-4 md:max-w-[650px] md:top-[20%] 2xl:top-1/3'>
+      <section className='p-5 backdrop-blur-[250px] rounded-t-lg space-y-4 sm:space-y-5'>
         <div className='relative'>
           <SearchIcon
             className='absolute left-3 top-[25%]'
@@ -38,14 +34,17 @@ export function StartMenu({ openApp }: StartMenuProps) {
         </div>
 
         <div>
-          <h3 className='font-bold mb-8'>Pinned Apps</h3>
+          <h3 className='font-bold mb-4 sm:mb-8'>Pinned Apps</h3>
 
-          <ul className='flex gap-5 items-start flex-wrap'>
+          <ul className='flex gap-3 items-start flex-wrap sm:gap-5'>
             <li
               className='w-[72px] h-[72px] flex flex-col items-center justify-center gap-2 cursor-pointer hover:bg-gray-200/20 transition-colors rounded-md'
               onClick={() => openApp('aboutMe')}
             >
-              <CircleUserRoundIcon size={32} />
+              <CircleUserRoundIcon
+                size={24}
+                className='sm:h-8 sm:w-8'
+              />
               <p className='text-xs max-w-[10ch] text-center'>About me</p>
             </li>
 
@@ -53,7 +52,10 @@ export function StartMenu({ openApp }: StartMenuProps) {
               className='w-[72px] h-[72px] flex flex-col items-center justify-center gap-2 cursor-pointer hover:bg-gray-200/20 transition-colors rounded-md'
               onClick={() => openApp('tracks')}
             >
-              <ListMusicIcon size={32} />
+              <ListMusicIcon
+                size={24}
+                className='sm:h-8 sm:w-8'
+              />
               <p className='text-xs max-w-[10ch] text-center'>
                 Your Top Tracks
               </p>
@@ -63,7 +65,10 @@ export function StartMenu({ openApp }: StartMenuProps) {
               className='w-[72px] h-[72px] flex flex-col items-center justify-center gap-2 cursor-pointer hover:bg-gray-200/20 transition-colors rounded-md'
               onClick={() => openApp('games')}
             >
-              <Gamepad2Icon size={32} />
+              <Gamepad2Icon
+                size={24}
+                className='sm:h-8 sm:w-8'
+              />
               <p className='text-xs max-w-[10ch] text-center'>My Top Games</p>
             </li>
 
@@ -71,7 +76,10 @@ export function StartMenu({ openApp }: StartMenuProps) {
               className='w-[72px] h-[72px] flex flex-col items-center justify-center gap-2 cursor-pointer hover:bg-gray-200/20 transition-colors rounded-md'
               onClick={() => openApp('recentProjects')}
             >
-              <GithubIcon size={32} />
+              <GithubIcon
+                size={24}
+                className='sm:h-8 sm:w-8'
+              />
               <p className='text-xs max-w-[10ch] text-center'>My Recent Work</p>
             </li>
 
@@ -85,7 +93,7 @@ export function StartMenu({ openApp }: StartMenuProps) {
                 <img
                   src={discordIcon}
                   alt='Discord Icon'
-                  className='h-10 w-10'
+                  className='h-8 w-8 sm:h-10 sm:w-10'
                 />
 
                 <p className='text-xs max-w-[10ch] text-center'>My Discord</p>
@@ -145,7 +153,7 @@ export function StartMenu({ openApp }: StartMenuProps) {
           title='Turn Off'
         >
           <PowerIcon
-            size={26}
+            size={24}
             className='transition-colors hover:bg-slate-100/5 p-1 rounded-sm'
           />
         </Link>

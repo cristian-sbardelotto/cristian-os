@@ -17,7 +17,12 @@ export const recommendedProjects: RecommendedProjectProps[] = [
     id: randomUUID(),
     name: 'Portfolio',
     url: 'https://github.com/cristian-sbardelotto/portfolio',
-    icon: <Luggage size={36} />,
+    icon: (
+      <Luggage
+        size={28}
+        className='sm:h-9 sm:w-9'
+      />
+    ),
     technology: 'Typescript',
     area: 'Frontend',
   },
@@ -25,7 +30,12 @@ export const recommendedProjects: RecommendedProjectProps[] = [
     id: randomUUID(),
     name: 'FSW Store',
     url: 'https://github.com/cristian-sbardelotto/fsw-store',
-    icon: <ShoppingCart size={36} />,
+    icon: (
+      <ShoppingCart
+        size={28}
+        className='sm:h-9 sm:w-9'
+      />
+    ),
     technology: 'Typescript',
     area: 'Fullstack',
   },
@@ -33,7 +43,12 @@ export const recommendedProjects: RecommendedProjectProps[] = [
     id: randomUUID(),
     name: 'Studion Backend',
     url: 'https://github.com/cristian-sbardelotto/studion-backend',
-    icon: <Plane size={36} />,
+    icon: (
+      <Plane
+        size={28}
+        className='sm:h-9 sm:w-9'
+      />
+    ),
     technology: 'Typescript',
     area: 'Backend',
   },
@@ -41,7 +56,12 @@ export const recommendedProjects: RecommendedProjectProps[] = [
     id: randomUUID(),
     name: 'Blog Sbardelotto',
     url: 'https://github.com/cristian-sbardelotto/blog-sbardelotto',
-    icon: <Folder size={36} />,
+    icon: (
+      <Folder
+        size={28}
+        className='sm:h-9 sm:w-9'
+      />
+    ),
     technology: 'Typescript',
     area: 'Fullstack',
   },

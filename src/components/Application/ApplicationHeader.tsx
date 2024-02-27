@@ -13,7 +13,7 @@ export function ApplicationHeader({ children }: ApplicationHeaderProps) {
 
   return (
     <header className='flex justify-between items-center'>
-      <h2 className='text-2xl font-semibold'>{children}</h2>
+      <h2 className='text-2xl font-semibold lg:text-3xl'>{children}</h2>
 
       <XIcon
         className='cursor-pointer rounded-md hover:bg-red-400 hover:bg-opacity-30 transition-colors'

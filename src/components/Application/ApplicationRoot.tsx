@@ -6,8 +6,8 @@ type ApplicationRootProps = {
 
 export function ApplicationRoot({ children }: ApplicationRootProps) {
   return (
-    <div className='h-full px-4 pt-5 pb-8 bg-[#222222c4] backdrop-blur-[25px]'>
-      {children}
+    <div className='h-full bg-[#222222c4] backdrop-blur-[25px]'>
+      <div className='px-4 pt-5'>{children}</div>
     </div>
   );
 }

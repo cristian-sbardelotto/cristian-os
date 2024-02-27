@@ -1,1 +1,1 @@
-export type Apps = 'aboutMe' | 'songs' | 'games' | 'recentProjects';
+export type Apps = 'aboutMe' | 'tracks' | 'games' | 'recentProjects';

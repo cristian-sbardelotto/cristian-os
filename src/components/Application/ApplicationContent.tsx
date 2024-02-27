@@ -5,5 +5,9 @@ type ApplicationContentProps = {
 };
 
 export function ApplicationContent({ children }: ApplicationContentProps) {
-  return <div className='mt-8'>{children}</div>;
+  return (
+    <div className='pb-8 px-2 max-h-[75vh] overflow-y-scroll mt-8 lg:px-12'>
+      {children}
+    </div>
+  );
 }

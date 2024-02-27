@@ -5,6 +5,7 @@ import { Application } from './Application';
 import { Button } from './Button';
 
 import { getTopTracks } from '../utils/getSpotifyTracks';
+import { ExternalLinkIcon } from 'lucide-react';
 
 type TrackProps = {
   name: string;
@@ -38,31 +39,44 @@ export function Tracks() {
           <ul className='list-none space-y-8 px-6'>
             {tracks?.map(track => (
               <li
-                className='flex items-center gap-6'
+                className='flex items-center justify-between'
                 key={track.id}
               >
-                <img
-                  src={track.albumImage}
-                  alt={track.name}
-                  className='h-20'
-                />
+                <div className='flex items-center gap-6'>
+                  <img
+                    src={track.albumImage}
+                    alt={track.name}
+                    className='h-20 lg:h-24'
+                  />
 
-                <div className='h-full flex flex-col justify-around'>
-                  <a
-                    href={track.url}
-                    target='_blank'
-                    rel='noreferrer'
-                    className='hover:underline'
-                  >
-                    <h4 className='group-hover:underline font-semibold break-all'>
-                      {track.name}
-                    </h4>
-                  </a>
+                  <div className='h-full flex flex-col justify-around'>
+                    <a
+                      href={track.url}
+                      target='_blank'
+                      rel='noreferrer'
+                      className='hover:underline'
+                    >
+                      <h4 className='group-hover:underline font-semibold break-words lg:text-lg'>
+                        {track.name}
+                      </h4>
+                    </a>
 
-                  <p className='text-sm font-light break-all'>
-                    {track.artists}
-                  </p>
+                    <p className='text-sm font-light break-words'>
+                      {track.artists}
+                    </p>
+                  </div>
                 </div>
+
+                <a
+                  href={track.url}
+                  target='_blank'
+                  rel='noreferrer'
+                  className='hidden lg:block'
+                >
+                  <Button className='group w-fit px-4 gap-2 bg-gray-200/20 rounded-full border-none hover:brightness-200'>
+                    <ExternalLinkIcon className='group-hover:scale-110 transition-all duration-300' />
+                  </Button>
+                </a>
               </li>
             ))}
           </ul>

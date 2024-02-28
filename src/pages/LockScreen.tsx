@@ -41,12 +41,14 @@ export function LockScreenPage() {
             src={wifiIcon}
             alt='Wi-fi Icon'
             className='w-[20px] md:w-[26px] h-[14px] md:h-[20px]'
+            title='Connected'
           />
 
           <img
             src={batteryIcon}
             alt='Battery Icon'
-            className='w-[28px] md:w-[34px] h-[15px] md:h-[21px]'
+            className='hidden sm:block w-[28px] md:w-[34px] h-[15px] md:h-[21px]'
+            title='Battery status: 100%'
           />
         </div>
       </header>
@@ -60,7 +62,7 @@ export function LockScreenPage() {
 
         <h1 className='text-3xl font-semibold md:text-4xl'>Cristian OS</h1>
 
-        <p className='underline text-[#A8A2A2] font-light text-lg md:text-xl'>
+        <p className='-mt-4 text-[#A8A2A2] font-light text-lg md:text-xl'>
           A little more about me.
         </p>
 
@@ -72,12 +74,12 @@ export function LockScreenPage() {
       </section>
 
       <footer className='flex justify-center'>
-        <Button className='px-7 py-3 gap-5'>
+        <Button className='px-7 py-3 gap-5 hover:scale-100'>
           <a
             href='https://github.com/cristian-sbardelotto'
             target='_blank'
             rel='noreferrer'
-            className='transition-all hover:scale-110'
+            className='transition-all hover:scale-[1.2]'
           >
             <Github />
           </a>
@@ -88,7 +90,7 @@ export function LockScreenPage() {
             href='https://linkedin.com/in/cristian-k-sbardelotto'
             target='_blank'
             rel='noreferrer'
-            className='transition-all hover:scale-110'
+            className='transition-all hover:scale-[1.2]'
           >
             <Linkedin />
           </a>

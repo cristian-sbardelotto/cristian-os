@@ -10,7 +10,7 @@ export function Button({ children, className, ...rest }: ButtonProps) {
   return (
     <button
       className={twMerge(
-        'py-4 px-36 flex justify-center items-center cursor-pointer text-gray-200 text-lg rounded-full border-2 border-[#bcbcbcbd] bg-[#ffffff33] shadow-button backdrop-blur-xl transition duration-500 hover:brightness-125',
+        'py-4 px-36 flex justify-center items-center cursor-pointer text-gray-200 text-lg rounded-full border-2 border-[#bcbcbcbd] bg-[#ffffff33] backdrop-blur-xl transition duration-500 hover:brightness-125 hover:bg-[#ffffff2f] hover:border-[#ffffffbd] hover:shadow-button hover:scale-[1.01]',
         className
       )}
       {...rest}

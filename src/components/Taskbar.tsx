@@ -9,9 +9,10 @@ import notificationsIcon from '/notifications-icon.svg';
 
 type TaskbarProps = {
   onStartClick: () => void;
+  isMenuOpen: boolean;
 };
 
-export function Taskbar({ onStartClick }: TaskbarProps) {
+export function Taskbar({ onStartClick, isMenuOpen }: TaskbarProps) {
   const [currentTime, setCurrentTime] = useState(getCurrentTime());
 
   const ONE_SECOND_IN_MILLISECONDS = 1000;
@@ -26,7 +27,9 @@ export function Taskbar({ onStartClick }: TaskbarProps) {
         src={startMenuIcon}
         alt='Start Menu Icon'
         title='Start'
-        className='cursor-pointer hover:brightness-200 hover:shadow-start-menu transition-all duration-[500ms]'
+        className={`cursor-pointer hover:brightness-200 hover:shadow-start-menu transition-all duration-[500ms] ${
+          isMenuOpen && 'shadow-start-menu'
+        }`}
         onClick={onStartClick}
       />
 

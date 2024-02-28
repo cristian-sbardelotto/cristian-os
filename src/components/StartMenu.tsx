@@ -1,4 +1,10 @@
+import { FormEvent } from 'react';
+
 import { Link } from 'react-router-dom';
+
+import { Apps } from '../types/apps';
+import { recommendedProjects } from '../data/projects';
+
 import {
   SearchIcon,
   PowerIcon,
@@ -7,10 +13,6 @@ import {
   Gamepad2Icon,
   GithubIcon,
 } from 'lucide-react';
-
-import { Apps } from '../types/apps';
-import { recommendedProjects } from '../data/projects';
-
 import discordIcon from '/discord-icon.svg';
 
 type StartMenuProps = {
@@ -18,20 +20,40 @@ type StartMenuProps = {
 };
 
 export function StartMenu({ openApp }: StartMenuProps) {
+  function handleSubmitForm(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const formData = new FormData(event.target as HTMLFormElement);
+    const data = Object.fromEntries(formData);
+
+    const searchValue = data.search as string;
+    const formattedValue = searchValue.split(' ').join('+');
+
+    const searchUrl = 'https://www.google.com/search?q=';
+
+    window.open(`${searchUrl}${formattedValue}`);
+  }
+
   return (
     <div className='absolute rounded-lg z-50 inset-0 top-5 px-4 w-full h-fit md:pl-4 md:max-w-[650px] md:top-[20%] 2xl:top-1/3'>
       <section className='p-5 backdrop-blur-[250px] rounded-t-lg space-y-4 sm:space-y-5'>
-        <div className='relative'>
-          <SearchIcon
-            className='absolute left-3 top-[25%]'
-            size={17}
-            color='#8A8A8A'
-          />
+        <form
+          onSubmit={e => handleSubmitForm(e)}
+          className='relative'
+        >
+          <button type='submit'>
+            <SearchIcon
+              className='absolute left-3 top-[25%]'
+              size={17}
+              color='#8A8A8A'
+            />
+          </button>
+
           <input
-            placeholder='Type here to search'
+            placeholder='Search on Google'
             className='w-full px-2 pl-10 py-2 bg-zinc-900 outline-none rounded-3xl text-xs placeholder:text-xs'
+            name='search'
           />
-        </div>
+        </form>
 
         <div>
           <h3 className='font-bold mb-4 sm:mb-8'>Pinned Apps</h3>

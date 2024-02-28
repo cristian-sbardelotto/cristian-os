@@ -2,18 +2,14 @@ import { FormEvent } from 'react';
 
 import { Link } from 'react-router-dom';
 
+import { StartApp } from './StartApp';
 import { Apps } from '../types/apps';
 import { recommendedProjects } from '../data/projects';
 
-import {
-  SearchIcon,
-  PowerIcon,
-  CircleUserRoundIcon,
-  ListMusicIcon,
-  Gamepad2Icon,
-  GithubIcon,
-} from 'lucide-react';
+import { SearchIcon, PowerIcon } from 'lucide-react';
+
 import discordIcon from '/discord-icon.svg';
+import { apps } from '../data/apps';
 
 type StartMenuProps = {
   openApp: (app: Apps) => void;
@@ -59,51 +55,15 @@ export function StartMenu({ openApp }: StartMenuProps) {
           <h3 className='font-bold mb-4 sm:mb-8'>Pinned Apps</h3>
 
           <ul className='flex gap-3 items-start flex-wrap sm:gap-5'>
-            <li
-              className='w-[72px] h-[72px] flex flex-col items-center justify-center gap-2 cursor-pointer hover:bg-gray-200/20 transition-colors rounded-md'
-              onClick={() => openApp('aboutMe')}
-            >
-              <CircleUserRoundIcon
-                size={24}
-                className='sm:h-8 sm:w-8'
-              />
-              <p className='text-xs max-w-[10ch] text-center'>About me</p>
-            </li>
-
-            <li
-              className='w-[72px] h-[72px] flex flex-col items-center justify-center gap-2 cursor-pointer hover:bg-gray-200/20 transition-colors rounded-md'
-              onClick={() => openApp('tracks')}
-            >
-              <ListMusicIcon
-                size={24}
-                className='sm:h-8 sm:w-8'
-              />
-              <p className='text-xs max-w-[10ch] text-center'>
-                Your Top Tracks
-              </p>
-            </li>
-
-            <li
-              className='w-[72px] h-[72px] flex flex-col items-center justify-center gap-2 cursor-pointer hover:bg-gray-200/20 transition-colors rounded-md'
-              onClick={() => openApp('games')}
-            >
-              <Gamepad2Icon
-                size={24}
-                className='sm:h-8 sm:w-8'
-              />
-              <p className='text-xs max-w-[10ch] text-center'>My Top Games</p>
-            </li>
-
-            <li
-              className='w-[72px] h-[72px] flex flex-col items-center justify-center gap-2 cursor-pointer hover:bg-gray-200/20 transition-colors rounded-md'
-              onClick={() => openApp('recentProjects')}
-            >
-              <GithubIcon
-                size={24}
-                className='sm:h-8 sm:w-8'
-              />
-              <p className='text-xs max-w-[10ch] text-center'>My Recent Work</p>
-            </li>
+            {apps.map(app => (
+              <StartApp.Root
+                openApp={() => openApp(app.slug)}
+                key={app.id}
+              >
+                <StartApp.Icon>{app.icon}</StartApp.Icon>
+                <StartApp.Name>{app.name}</StartApp.Name>
+              </StartApp.Root>
+            ))}
 
             <li className='w-[72px] h-[72px] cursor-pointer hover:bg-gray-200/20 transition-colors rounded-md'>
               <a

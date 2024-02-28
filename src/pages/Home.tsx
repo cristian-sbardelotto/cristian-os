@@ -24,7 +24,7 @@ export function HomePage() {
 
       {openedApp !== 'none' && apps[openedApp]}
 
-      <footer className='absolute bottom-0 w-full h-[72px]'>
+      <footer className='absolute bottom-0 w-full h-[72px] sm:h-[78px]'>
         <Taskbar
           onStartClick={toggleMenu}
           isMenuOpen={isMenuOpen}

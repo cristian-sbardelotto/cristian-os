@@ -1,7 +1,12 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 
 import { getCurrentDate } from '../utils/getCurrentDate';
 import { getCurrentTime } from '../utils/getCurrentTime';
+
+import { appsIcons, appsNames } from '../data/apps';
+import { AppContext } from '../context/App';
+
+import { XIcon } from 'lucide-react';
 
 import startMenuIcon from '/start-menu-icon.svg';
 import wifiIcon from '/wifi-icon.svg';
@@ -14,6 +19,7 @@ type TaskbarProps = {
 
 export function Taskbar({ onStartClick, isMenuOpen }: TaskbarProps) {
   const [currentTime, setCurrentTime] = useState(getCurrentTime());
+  const { openedApp, closeApp } = useContext(AppContext);
 
   const ONE_SECOND_IN_MILLISECONDS = 1000;
   setInterval(
@@ -22,16 +28,36 @@ export function Taskbar({ onStartClick, isMenuOpen }: TaskbarProps) {
   );
 
   return (
-    <section className='p-4 flex items-center justify-between bg-[#2222] backdrop-blur-[50px]'>
-      <img
-        src={startMenuIcon}
-        alt='Start Menu Icon'
-        title='Start'
-        className={`cursor-pointer hover:brightness-200 hover:shadow-start-menu transition-all duration-[500ms] ${
-          isMenuOpen && 'shadow-start-menu'
-        }`}
-        onClick={onStartClick}
-      />
+    <section className='group p-4 flex items-center justify-between bg-[#2222] backdrop-blur-[50px] sm:h-[78px]'>
+      <div className='flex items-center gap-4'>
+        <img
+          src={startMenuIcon}
+          alt='Start Menu Icon'
+          title='Start'
+          className={`h-fit cursor-pointer hover:brightness-200 hover:shadow-start-menu transition-all duration-[500ms] ${
+            isMenuOpen && 'shadow-start-menu'
+          }`}
+          onClick={onStartClick}
+        />
+
+        {openedApp !== 'none' && (
+          <div
+            className='hidden relative p-1 bg-white/10 rounded-lg cursor-pointer sm:block'
+            title={appsNames[openedApp]}
+          >
+            <div className='flex flex-col items-center gap-1'>
+              {appsIcons[openedApp]}
+
+              <div className='w-[15px] bg-white h-[3px] rounded-full' />
+            </div>
+
+            <XIcon
+              className='hidden group-hover:block absolute inset-0 left-[125%] top-1/4 cursor-pointer rounded-md hover:bg-red-400 hover:bg-opacity-30 transition-colors'
+              onClick={closeApp}
+            />
+          </div>
+        )}
+      </div>
 
       <div className='flex items-center gap-4'>
         <img

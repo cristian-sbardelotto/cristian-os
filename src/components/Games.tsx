@@ -12,7 +12,7 @@ export function Games() {
 
       <Application.Content>
         <ul className='list-none space-y-8 px-4'>
-          {games.map(game => (
+          {games.map((game, index) => (
             <li
               className='flex items-center justify-between'
               key={game.id}
@@ -32,7 +32,7 @@ export function Games() {
                     className='hover:underline'
                   >
                     <h4 className='group-hover:underline font-semibold break-words lg:text-lg xl:text-2xl'>
-                      {game.name}
+                      {++index}. {game.name}
                     </h4>
                   </a>
 

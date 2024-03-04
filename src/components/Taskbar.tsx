@@ -41,20 +41,22 @@ export function Taskbar({ onStartClick, isMenuOpen }: TaskbarProps) {
         />
 
         {openedApp !== 'none' && (
-          <div
-            className='hidden relative p-1 bg-white/10 rounded-lg cursor-pointer sm:block'
-            title={appsNames[openedApp]}
-          >
-            <div className='flex flex-col items-center gap-1'>
+          <div className='hidden relative p-1 bg-white/10 rounded-lg sm:block'>
+            <div
+              className='flex flex-col items-center gap-1'
+              title={appsNames[openedApp]}
+            >
               {appsIcons[openedApp]}
 
               <div className='w-[15px] bg-white h-[3px] rounded-full' />
             </div>
 
-            <XIcon
-              className='hidden group-hover:block absolute inset-0 left-[125%] top-1/4 cursor-pointer rounded-md hover:bg-red-400 hover:bg-opacity-30 transition-colors'
+            <div
+              title='Close App'
               onClick={closeApp}
-            />
+            >
+              <XIcon className='hidden group-hover:block absolute inset-0 left-[125%] top-1/4 cursor-pointer rounded-md hover:bg-red-400 hover:bg-opacity-30 transition-colors' />
+            </div>
           </div>
         )}
       </div>

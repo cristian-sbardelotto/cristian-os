@@ -16,6 +16,8 @@ type TopTracksProps = {
   items: TracksProps[];
 };
 
+const devMode = import.meta.env.DEV;
+
 async function fetchSpotifyApi(endpoint: string, method: string) {
   const token = localStorage.getItem('token');
 
@@ -33,7 +35,9 @@ async function fetchSpotifyApi(endpoint: string, method: string) {
 
     if (data.status === 401) {
       localStorage.removeItem('token');
-      location.href = 'http://localhost:5173/au';
+      location.href = devMode
+        ? `${import.meta.env.VITE_DEV_URL}/au`
+        : 'https://cristian-os.vercel.app/au';
       return;
     }
 
@@ -47,7 +51,9 @@ export async function getTopTracks() {
   const token = localStorage.getItem('token');
 
   if (!token) {
-    location.href = 'http://localhost:5173/au';
+    location.href = devMode
+      ? `${import.meta.env.VITE_DEV_URL}/au`
+      : 'https://cristian-os.vercel.app/au';
     return;
   }
 

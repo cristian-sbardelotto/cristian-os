@@ -1,12 +1,16 @@
 import { useEffect } from 'react';
 
+const devMode = import.meta.env.DEV;
+
 export function SpotifyCallback() {
   useEffect(() => {
     async function handleAuthorizationCallback() {
       const params = new URLSearchParams(window.location.search);
       const authorizationCode = params.get('code');
       const clientSecret = import.meta.env.VITE_SPOTIFY_CLIENT_SECRET;
-      const redirectUri = 'http://localhost:5173/auth';
+      const redirectUri = devMode
+        ? `${import.meta.env.VITE_DEV_URL}/auth`
+        : 'https://cristian-os.vercel.app/auth';
       const clientId = import.meta.env.VITE_SPOTIFY_CLIENT_ID;
 
       const data = {
@@ -30,7 +34,9 @@ export function SpotifyCallback() {
           const data = await response.json();
 
           localStorage.setItem('token', data.access_token);
-          location.href = 'http://localhost:5173/home';
+          location.href = devMode
+            ? `${import.meta.env.VITE_DEV_URL}/home`
+            : 'https://cristian-os.vercel.app/home';
         }
       } catch (error) {
         console.error('Erro ao solicitar token de acesso:', error);

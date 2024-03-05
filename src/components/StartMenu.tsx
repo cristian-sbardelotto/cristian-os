@@ -1,6 +1,7 @@
 import { FormEvent } from 'react';
 
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 import { StartApp } from './StartApp';
 import { Apps } from '../types/apps';
@@ -16,6 +17,8 @@ type StartMenuProps = {
 };
 
 export function StartMenu({ openApp }: StartMenuProps) {
+  const { t } = useTranslation();
+
   function handleSubmitForm(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const formData = new FormData(event.target as HTMLFormElement);
@@ -52,7 +55,9 @@ export function StartMenu({ openApp }: StartMenuProps) {
         </form>
 
         <div>
-          <h3 className='font-bold mb-4 sm:mb-8'>Pinned Apps</h3>
+          <h3 className='font-bold mb-4 sm:mb-8'>
+            {t('start-menu.main.pinned-apps')}
+          </h3>
 
           <ul className='flex gap-3 items-start flex-wrap sm:gap-5'>
             {apps.map(app => (

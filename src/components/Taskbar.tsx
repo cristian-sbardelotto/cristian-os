@@ -1,5 +1,7 @@
 import { useContext, useState } from 'react';
 
+import { useTranslation } from 'react-i18next';
+
 import { getCurrentDate } from '../utils/getCurrentDate';
 import { getCurrentTime } from '../utils/getCurrentTime';
 
@@ -18,6 +20,11 @@ type TaskbarProps = {
 };
 
 export function Taskbar({ onStartClick, isMenuOpen }: TaskbarProps) {
+  const {
+    i18n: { changeLanguage, language },
+  } = useTranslation();
+  const [currentLanguage, setCurrentLanguage] = useState(language);
+
   const [currentTime, setCurrentTime] = useState(getCurrentTime());
   const { openedApp, closeApp } = useContext(AppContext);
 
@@ -26,6 +33,13 @@ export function Taskbar({ onStartClick, isMenuOpen }: TaskbarProps) {
     () => setCurrentTime(getCurrentTime()),
     ONE_SECOND_IN_MILLISECONDS
   );
+
+  function handleChangeLanguage() {
+    const newLanguage = currentLanguage === 'pt' ? 'en' : 'pt';
+
+    changeLanguage(newLanguage);
+    setCurrentLanguage(newLanguage);
+  }
 
   return (
     <section className='group p-4 flex items-center justify-between bg-[#2222] backdrop-blur-[50px] sm:h-[78px] animate-appear-down'>
@@ -62,6 +76,13 @@ export function Taskbar({ onStartClick, isMenuOpen }: TaskbarProps) {
       </div>
 
       <div className='flex items-center gap-4'>
+        <button
+          className='hover:bg-gray-200/10 rounded-xl px-2 py-1 transition-colors duration-200'
+          onClick={handleChangeLanguage}
+        >
+          {language === 'pt' ? 'PT-BR' : 'EN-US'}
+        </button>
+
         <img
           src={wifiIcon}
           alt='Wi-fi Icon'

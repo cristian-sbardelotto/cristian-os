@@ -5,12 +5,12 @@ import { useTranslation } from 'react-i18next';
 
 import { StartApp } from './StartApp';
 import { Apps } from '../types/apps';
+import { apps } from '../data/apps';
 import { recommendedProjects } from '../data/projects';
 
 import { SearchIcon, PowerIcon } from 'lucide-react';
 
 import discordIcon from '/discord-icon.svg';
-import { apps } from '../data/apps';
 
 type StartMenuProps = {
   openApp: (app: Apps) => void;
@@ -48,7 +48,7 @@ export function StartMenu({ openApp }: StartMenuProps) {
           </button>
 
           <input
-            placeholder='Search on Google'
+            placeholder={t('start-menu.placeholder')}
             className='w-full px-2 pl-10 py-2 bg-zinc-900 outline-none rounded-3xl text-xs placeholder:text-xs'
             name='search'
           />
@@ -90,7 +90,9 @@ export function StartMenu({ openApp }: StartMenuProps) {
         </div>
 
         <div>
-          <h3 className='font-bold mb-4'>Recommended Projects</h3>
+          <h3 className='font-bold mb-4'>
+            {t('start-menu.main.recommended-projects')}
+          </h3>
 
           <ul className='grid gap-y-4 overflow-y-scroll max-h-24 sm:grid-cols-2 sm:max-h-[initial] sm:overflow-y-auto'>
             {recommendedProjects.map(project => (
@@ -137,7 +139,7 @@ export function StartMenu({ openApp }: StartMenuProps) {
 
         <Link
           to='/'
-          title='Turn Off'
+          title={t('title.turn-off')}
         >
           <PowerIcon
             size={24}

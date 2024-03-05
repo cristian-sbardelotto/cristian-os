@@ -21,6 +21,7 @@ type TaskbarProps = {
 
 export function Taskbar({ onStartClick, isMenuOpen }: TaskbarProps) {
   const {
+    t,
     i18n: { changeLanguage, language },
   } = useTranslation();
   const [currentLanguage, setCurrentLanguage] = useState(language);
@@ -47,7 +48,7 @@ export function Taskbar({ onStartClick, isMenuOpen }: TaskbarProps) {
         <img
           src={startMenuIcon}
           alt='Start Menu Icon'
-          title='Start'
+          title={t('title.start')}
           className={`h-fit cursor-pointer hover:brightness-200 hover:shadow-start-menu transition-all duration-[500ms] ${
             isMenuOpen && 'shadow-start-menu'
           }`}
@@ -66,7 +67,7 @@ export function Taskbar({ onStartClick, isMenuOpen }: TaskbarProps) {
             </div>
 
             <div
-              title='Close App'
+              title={t('title.close-app')}
               onClick={closeApp}
             >
               <XIcon className='hidden group-hover:block absolute inset-0 left-[125%] top-1/4 cursor-pointer rounded-md hover:bg-red-400 hover:bg-opacity-30 transition-colors' />
@@ -87,7 +88,7 @@ export function Taskbar({ onStartClick, isMenuOpen }: TaskbarProps) {
           src={wifiIcon}
           alt='Wi-fi Icon'
           className='w-5 h-5'
-          title='Connected'
+          title={t('title.wi-fi')}
         />
 
         <div className='text-sm text-end tracking-wide'>
@@ -100,7 +101,7 @@ export function Taskbar({ onStartClick, isMenuOpen }: TaskbarProps) {
         <img
           src={notificationsIcon}
           alt='Notifications Icon'
-          title='You have no notifications'
+          title={t('title.notifications')}
           className='w-5 h-5'
         />
       </div>

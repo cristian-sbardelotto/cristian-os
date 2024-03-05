@@ -28,7 +28,7 @@ export function Taskbar({ onStartClick, isMenuOpen }: TaskbarProps) {
   );
 
   return (
-    <section className='group p-4 flex items-center justify-between bg-[#2222] backdrop-blur-[50px] sm:h-[78px]'>
+    <section className='group p-4 flex items-center justify-between bg-[#2222] backdrop-blur-[50px] sm:h-[78px] animate-appear-down'>
       <div className='flex items-center gap-4'>
         <img
           src={startMenuIcon}

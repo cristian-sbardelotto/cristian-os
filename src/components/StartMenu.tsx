@@ -30,8 +30,8 @@ export function StartMenu({ openApp }: StartMenuProps) {
   }
 
   return (
-    <div className='absolute rounded-lg z-50 inset-0 top-5 px-4 w-full h-fit md:pl-4 md:max-w-[650px] md:top-[20%] 2xl:top-1/3'>
-      <section className='p-5 backdrop-blur-[250px] rounded-t-lg space-y-4 sm:space-y-5'>
+    <div className='absolute rounded-lg z-50 inset-0 top-5 px-4 w-full h-fit md:pl-4 md:max-w-[650px] md:top-[20%] 2xl:top-1/ animate-appear-down'>
+      <section className='p-5 rounded-t-lg space-y-4 sm:space-y-5 bg-start-menu'>
         <form
           onSubmit={e => handleSubmitForm(e)}
           className='relative'

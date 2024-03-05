@@ -18,17 +18,26 @@ export default {
       },
       backgroundImage: {
         'off-screen': 'url(/dark-bg.png)',
+        'start-menu':
+          'linear-gradient(45deg, rgba(24,24,24,1) 0%, rgba(36,25,25,1) 76%, rgba(46,23,23,1) 100%)',
       },
       colors: {
         'white-100': '#f5f5f5',
       },
       animation: {
         appear: 'appear 0.7s',
+        'appear-down': 'appear-down 0.7s',
       },
       keyframes: {
         appear: {
           '0%': {
             transform: 'translateY(-10vh)',
+            opacity: 0,
+          },
+        },
+        'appear-down': {
+          '0%': {
+            transform: 'translateY(10vh)',
             opacity: 0,
           },
         },

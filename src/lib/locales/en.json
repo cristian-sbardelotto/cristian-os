@@ -1,4 +1,11 @@
 {
   "lock-screen.header.copyright": "Made by",
-  "start-menu.main.pinned-apps": "Pinned Apps"
+  "lock-screen.main.subtitle": "A little more about me.",
+  "lock-screen.main.button": "Home Screen",
+
+  "start-menu.main.pinned-apps": "Pinned Apps",
+
+  "title.turn-off": "Turn Off",
+  "title.wi-fi": "Connected",
+  "title.battery": "Battery status: 100%"
 }

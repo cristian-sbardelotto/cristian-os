@@ -1,4 +1,11 @@
 {
   "lock-screen.header.copyright": "Feito por",
-  "start-menu.main.pinned-apps": "Apps Fixados"
+  "lock-screen.main.subtitle": "Um pouco mais sobre mim.",
+  "lock-screen.main.button": "Tela Inicial",
+
+  "start-menu.main.pinned-apps": "Apps Fixados",
+
+  "title.turn-off": "Desligar",
+  "title.wi-fi": "Conectado",
+  "title.battery": "Status da bateria: 100%"
 }

@@ -80,10 +80,12 @@ export function StartMenu({ openApp }: StartMenuProps) {
                 <img
                   src={discordIcon}
                   alt='Discord Icon'
-                  className='h-8 w-8 sm:h-10 sm:w-10'
+                  className='h-6 w-6 sm:h-8 sm:w-8'
                 />
 
-                <p className='text-xs max-w-[10ch] text-center'>My Discord</p>
+                <p className='text-xs max-w-[10ch] text-center'>
+                  {t('apps.discord')}
+                </p>
               </a>
             </li>
           </ul>

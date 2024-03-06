@@ -3,10 +3,9 @@ import { Link } from 'react-router-dom';
 
 import { Application } from './Application';
 import { Button } from './Button';
+import { ExternalLink } from './ExternalLink';
 import { useTranslation } from 'react-i18next';
 import { getTopTracks } from '../utils/getSpotifyTracks';
-
-import { ExternalLinkIcon } from 'lucide-react';
 
 type TrackProps = {
   name: string;
@@ -70,16 +69,7 @@ export function Tracks() {
                   </div>
                 </div>
 
-                <a
-                  href={track.url}
-                  target='_blank'
-                  rel='noreferrer'
-                  className='hidden lg:block'
-                >
-                  <Button className='group w-fit px-4 gap-2 bg-gray-200/20 rounded-full border-none hover:brightness-200'>
-                    <ExternalLinkIcon className='group-hover:scale-110 transition-all duration-300' />
-                  </Button>
-                </a>
+                <ExternalLink url={track.url} />
               </li>
             ))}
           </ul>

@@ -7,6 +7,7 @@ import { StartApp } from './StartApp';
 import { Apps } from '../types/apps';
 import { apps } from '../data/apps';
 import { recommendedProjects } from '../data/projects';
+import { getTranslatedAppName } from '../utils/getTranslatedAppName';
 
 import { SearchIcon, PowerIcon } from 'lucide-react';
 
@@ -66,7 +67,9 @@ export function StartMenu({ openApp }: StartMenuProps) {
                 key={app.id}
               >
                 <StartApp.Icon>{app.icon}</StartApp.Icon>
-                <StartApp.Name>{app.name}</StartApp.Name>
+                <StartApp.Name>
+                  {t(getTranslatedAppName(app.slug))}
+                </StartApp.Name>
               </StartApp.Root>
             ))}
 

@@ -1,5 +1,3 @@
-import { FormEvent } from 'react';
-
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
@@ -8,6 +6,7 @@ import { Apps } from '../types/apps';
 import { apps } from '../data/apps';
 import { recommendedProjects } from '../data/projects';
 import { getTranslatedAppName } from '../utils/getTranslatedAppName';
+import { searchOnGoogle } from '../utils/searchOnGoogle';
 
 import { SearchIcon, PowerIcon } from 'lucide-react';
 
@@ -20,24 +19,11 @@ type StartMenuProps = {
 export function StartMenu({ openApp }: StartMenuProps) {
   const { t } = useTranslation();
 
-  function handleSubmitForm(event: FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-    const formData = new FormData(event.target as HTMLFormElement);
-    const data = Object.fromEntries(formData);
-
-    const searchValue = data.search as string;
-    const formattedValue = searchValue.split(' ').join('+');
-
-    const searchUrl = 'https://www.google.com/search?q=';
-
-    window.open(`${searchUrl}${formattedValue}`);
-  }
-
   return (
     <div className='absolute rounded-lg z-50 inset-0 top-5 px-4 w-full h-fit md:pl-4 md:max-w-[650px] md:top-[20%] 2xl:top-1/ animate-appear-down'>
       <section className='p-5 rounded-t-lg space-y-4 sm:space-y-5 bg-start-menu'>
         <form
-          onSubmit={e => handleSubmitForm(e)}
+          onSubmit={e => searchOnGoogle(e)}
           className='relative'
         >
           <button type='submit'>

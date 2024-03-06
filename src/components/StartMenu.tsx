@@ -1,21 +1,25 @@
 import { FormEvent } from 'react';
 
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 import { StartApp } from './StartApp';
 import { Apps } from '../types/apps';
+import { apps } from '../data/apps';
 import { recommendedProjects } from '../data/projects';
+import { getTranslatedAppName } from '../utils/getTranslatedAppName';
 
 import { SearchIcon, PowerIcon } from 'lucide-react';
 
 import discordIcon from '/discord-icon.svg';
-import { apps } from '../data/apps';
 
 type StartMenuProps = {
   openApp: (app: Apps) => void;
 };
 
 export function StartMenu({ openApp }: StartMenuProps) {
+  const { t } = useTranslation();
+
   function handleSubmitForm(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const formData = new FormData(event.target as HTMLFormElement);
@@ -45,14 +49,16 @@ export function StartMenu({ openApp }: StartMenuProps) {
           </button>
 
           <input
-            placeholder='Search on Google'
+            placeholder={t('start-menu.placeholder')}
             className='w-full px-2 pl-10 py-2 bg-zinc-900 outline-none rounded-3xl text-xs placeholder:text-xs'
             name='search'
           />
         </form>
 
         <div>
-          <h3 className='font-bold mb-4 sm:mb-8'>Pinned Apps</h3>
+          <h3 className='font-bold mb-4 sm:mb-8'>
+            {t('start-menu.main.pinned-apps')}
+          </h3>
 
           <ul className='flex gap-3 items-start flex-wrap sm:gap-5'>
             {apps.map(app => (
@@ -61,7 +67,9 @@ export function StartMenu({ openApp }: StartMenuProps) {
                 key={app.id}
               >
                 <StartApp.Icon>{app.icon}</StartApp.Icon>
-                <StartApp.Name>{app.name}</StartApp.Name>
+                <StartApp.Name>
+                  {t(getTranslatedAppName(app.slug))}
+                </StartApp.Name>
               </StartApp.Root>
             ))}
 
@@ -75,17 +83,21 @@ export function StartMenu({ openApp }: StartMenuProps) {
                 <img
                   src={discordIcon}
                   alt='Discord Icon'
-                  className='h-8 w-8 sm:h-10 sm:w-10'
+                  className='h-6 w-6 sm:h-8 sm:w-8'
                 />
 
-                <p className='text-xs max-w-[10ch] text-center'>My Discord</p>
+                <p className='text-xs max-w-[10ch] text-center'>
+                  {t('apps.discord')}
+                </p>
               </a>
             </li>
           </ul>
         </div>
 
         <div>
-          <h3 className='font-bold mb-4'>Recommended Projects</h3>
+          <h3 className='font-bold mb-4'>
+            {t('start-menu.main.recommended-projects')}
+          </h3>
 
           <ul className='grid gap-y-4 overflow-y-scroll max-h-24 sm:grid-cols-2 sm:max-h-[initial] sm:overflow-y-auto'>
             {recommendedProjects.map(project => (
@@ -132,7 +144,7 @@ export function StartMenu({ openApp }: StartMenuProps) {
 
         <Link
           to='/'
-          title='Turn Off'
+          title={t('title.turn-off')}
         >
           <PowerIcon
             size={24}

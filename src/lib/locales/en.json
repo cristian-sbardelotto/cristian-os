@@ -1,0 +1,31 @@
+{
+  "lock-screen.header.copyright": "Made by",
+  "lock-screen.main.subtitle": "A little more about me.",
+  "lock-screen.main.button": "Home Screen",
+
+  "title.turn-off": "Turn Off",
+  "title.wi-fi": "Connected",
+  "title.battery": "Battery status: 100%",
+  "title.notifications": "No new notifications",
+  "title.close-app": "Close App",
+  "title.start": "Start",
+
+  "apps.about-me": "About Me",
+  "apps.tracks": "Your Top Tracks",
+  "apps.games": "My Top Games",
+  "apps.recent-projects": "My Recent Work",
+  "apps.discord": "My Discord",
+
+  "start-menu.main.pinned-apps": "Pinned Apps",
+  "start-menu.main.recommended-projects": "Recommended Projects",
+  "start-menu.placeholder": "Search on Google",
+
+  "about-me.paragraph-1": "Hey there! I’m Cristian Sbardelotto, a FullStack Developer.",
+  "about-me.paragraph-2": "I kicked off my web programming journey back in August 2022 and my current goal is to land my first job and eventually become a Tech Lead down the road.",
+  "about-me.paragraph-3": "By now, my go-to tech stack includes Javascript, Typescript, React, NextJS, NodeJS, Prisma, Fastify.",
+  "about-me.paragraph-4": "As a young programmer, I got some default hobbies, such as playing videogames (you can check out some of them on Games App, on Start Menu), listen to a lot of music, especially Eminem (you can also see some of your most listened tracks on the Tracks App), playing some football, and of course, programming.",
+  "about-me.paragraph-5": "Wanna chat about tech, games, or sports? Shoot me a message!",
+  "about-me.paragraph-6": "Check out my portfolio right here:",
+
+  "tracks.login-button": "Login with Spotify"
+}

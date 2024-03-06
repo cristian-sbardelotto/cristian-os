@@ -1,40 +1,37 @@
 import { Application } from './Application';
 
+import { useTranslation } from 'react-i18next';
+
 export function AboutMe() {
+  const { t } = useTranslation();
+
   return (
     <Application.Root>
-      <Application.Header>About Me</Application.Header>
+      <Application.Header>{t('apps.about-me')}</Application.Header>
 
       <Application.Content>
         <p className='lg:text-xl lg:leading-relaxed'>
-          Hey there! I’m Cristian Sbardelotto, a FullStack Developer.
+          {t('about-me.paragraph-1')}
         </p>
 
         <p className='mt-4 lg:text-xl lg:leading-relaxed'>
-          I kicked off my web programming journey back in August 2022 and my
-          current goal is to land my first job and eventually become a Tech Lead
-          down the road.
+          {t('about-me.paragraph-2')}
         </p>
 
         <p className='mt-4 lg:text-xl lg:leading-relaxed'>
-          By now, my go-to tech stack includes Javascript, Typescript, React,
-          NextJS, NodeJS, Prisma, Fastify.
+          {t('about-me.paragraph-3')}
         </p>
 
         <p className='mt-4 lg:text-xl lg:leading-relaxed'>
-          As a young programmer, I got some &quot;<i>default</i> &quot; hobbies,
-          such as playing videogames (you can check out some of them on the
-          Games App, on Start Menu), listen to a lot of music, especially Eminem
-          (you can also see some of your most listened tracks on the Tracks
-          App), playing some football, and of course, programming.
+          {t('about-me.paragraph-4')}
         </p>
 
         <p className='mt-4 lg:text-xl lg:leading-relaxed'>
-          Wanna chat about tech, games, or sports? Shoot me a message!
+          {t('about-me.paragraph-5')}
         </p>
 
         <p className='mt-4 lg:text-xl lg:leading-relaxed'>
-          Check out my portfolio right here:{' '}
+          {t('about-me.paragraph-6')}{' '}
           <a
             className='underline hover:brightness-50 transition-all duration-500'
             href='https://bit.ly/portfolioSbardelotto'

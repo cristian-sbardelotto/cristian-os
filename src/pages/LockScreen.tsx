@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Button } from '../components/Button';
+import { useTranslation } from 'react-i18next';
 
 import { Github, Linkedin } from 'lucide-react';
 
@@ -8,11 +9,13 @@ import wifiIcon from '/wifi-icon.svg';
 import batteryIcon from '/battery-icon.svg';
 
 export function LockScreenPage() {
+  const { t } = useTranslation();
+
   return (
     <main className='pt-5 pb-10 h-full flex flex-col justify-between md:pb-16 animate-appear'>
       <header className='flex items-center justify-between px-5 md:px-[50px] md:pt-10'>
         <p className='flex flex-col md:inline-block text-xs md:text-base text-zinc-300 font-semibold'>
-          Made by{' '}
+          {t('lock-screen.header.copyright')}{' '}
           <a
             href='https://linkedin.com/in/cristian-k-sbardelotto'
             target='_blank'
@@ -27,7 +30,7 @@ export function LockScreenPage() {
           <Link to='/'>
             <Button
               className='px-3 py-2'
-              title='Turn Off'
+              title={t('title.turn-off')}
             >
               <img
                 src={turnOffIcon}
@@ -41,14 +44,14 @@ export function LockScreenPage() {
             src={wifiIcon}
             alt='Wi-fi Icon'
             className='w-[20px] md:w-[26px] h-[14px] md:h-[20px]'
-            title='Connected'
+            title={t('title.wi-fi')}
           />
 
           <img
             src={batteryIcon}
             alt='Battery Icon'
             className='hidden sm:block w-[28px] md:w-[34px] h-[15px] md:h-[21px]'
-            title='Battery status: 100%'
+            title={t('title.battery')}
           />
         </div>
       </header>
@@ -63,12 +66,12 @@ export function LockScreenPage() {
         <h1 className='text-3xl font-semibold md:text-4xl'>Cristian OS</h1>
 
         <p className='-mt-4 text-[#A8A2A2] font-light text-lg md:text-xl'>
-          A little more about me.
+          {t('lock-screen.main.subtitle')}
         </p>
 
         <Link to='/home'>
           <Button className='px-6 py-3 text-sm md:text-lg md:px-12'>
-            Home Screen
+            {t('lock-screen.main.button')}
           </Button>
         </Link>
       </section>

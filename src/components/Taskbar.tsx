@@ -1,10 +1,11 @@
 import { useContext, useState } from 'react';
 
+import { useTranslation } from 'react-i18next';
 import { getCurrentDate } from '../utils/getCurrentDate';
 import { getCurrentTime } from '../utils/getCurrentTime';
-
-import { appsIcons, appsNames } from '../data/apps';
+import { appsIcons } from '../data/apps';
 import { AppContext } from '../context/App';
+import { getTranslatedAppName } from '../utils/getTranslatedAppName';
 
 import { XIcon } from 'lucide-react';
 
@@ -18,6 +19,12 @@ type TaskbarProps = {
 };
 
 export function Taskbar({ onStartClick, isMenuOpen }: TaskbarProps) {
+  const {
+    t,
+    i18n: { changeLanguage, language },
+  } = useTranslation();
+  const [currentLanguage, setCurrentLanguage] = useState(language);
+
   const [currentTime, setCurrentTime] = useState(getCurrentTime());
   const { openedApp, closeApp } = useContext(AppContext);
 
@@ -27,13 +34,20 @@ export function Taskbar({ onStartClick, isMenuOpen }: TaskbarProps) {
     ONE_SECOND_IN_MILLISECONDS
   );
 
+  function handleChangeLanguage() {
+    const newLanguage = currentLanguage === 'pt' ? 'en' : 'pt';
+
+    changeLanguage(newLanguage);
+    setCurrentLanguage(newLanguage);
+  }
+
   return (
     <section className='group p-4 flex items-center justify-between bg-[#2222] backdrop-blur-[50px] sm:h-[78px] animate-appear-down'>
       <div className='flex items-center gap-4'>
         <img
           src={startMenuIcon}
           alt='Start Menu Icon'
-          title='Start'
+          title={t('title.start')}
           className={`h-fit cursor-pointer hover:brightness-200 hover:shadow-start-menu transition-all duration-[500ms] ${
             isMenuOpen && 'shadow-start-menu'
           }`}
@@ -44,7 +58,7 @@ export function Taskbar({ onStartClick, isMenuOpen }: TaskbarProps) {
           <div className='hidden relative p-1 bg-white/10 rounded-lg sm:block'>
             <div
               className='flex flex-col items-center gap-1'
-              title={appsNames[openedApp]}
+              title={t(getTranslatedAppName(openedApp))}
             >
               {appsIcons[openedApp]}
 
@@ -52,7 +66,7 @@ export function Taskbar({ onStartClick, isMenuOpen }: TaskbarProps) {
             </div>
 
             <div
-              title='Close App'
+              title={t('title.close-app')}
               onClick={closeApp}
             >
               <XIcon className='hidden group-hover:block absolute inset-0 left-[125%] top-1/4 cursor-pointer rounded-md hover:bg-red-400 hover:bg-opacity-30 transition-colors' />
@@ -62,11 +76,18 @@ export function Taskbar({ onStartClick, isMenuOpen }: TaskbarProps) {
       </div>
 
       <div className='flex items-center gap-4'>
+        <button
+          className='hover:bg-gray-200/10 rounded-xl px-2 py-1 transition-colors duration-200'
+          onClick={handleChangeLanguage}
+        >
+          {language === 'pt' ? 'PT-BR' : 'EN-US'}
+        </button>
+
         <img
           src={wifiIcon}
           alt='Wi-fi Icon'
           className='w-5 h-5'
-          title='Connected'
+          title={t('title.wi-fi')}
         />
 
         <div className='text-sm text-end tracking-wide'>
@@ -79,7 +100,7 @@ export function Taskbar({ onStartClick, isMenuOpen }: TaskbarProps) {
         <img
           src={notificationsIcon}
           alt='Notifications Icon'
-          title='You have no notifications'
+          title={t('title.notifications')}
           className='w-5 h-5'
         />
       </div>

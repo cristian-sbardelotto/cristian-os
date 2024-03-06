@@ -11,6 +11,7 @@ import { searchOnGoogle } from '../utils/searchOnGoogle';
 import { SearchIcon, PowerIcon } from 'lucide-react';
 
 import discordIcon from '/discord-icon.svg';
+import { StartProject } from './StartProject';
 
 type StartMenuProps = {
   openApp: (app: Apps) => void;
@@ -20,7 +21,7 @@ export function StartMenu({ openApp }: StartMenuProps) {
   const { t } = useTranslation();
 
   return (
-    <div className='absolute rounded-lg z-50 inset-0 top-5 px-4 w-full h-fit md:pl-4 md:max-w-[650px] md:top-[20%] 2xl:top-1/ animate-appear-down'>
+    <div className='absolute rounded-lg z-50 inset-0 top-5 px-4 w-full h-fit md:pl-4 md:max-w-[650px] md:top-[20%] animate-appear-down'>
       <section className='p-5 rounded-t-lg space-y-4 sm:space-y-5 bg-start-menu'>
         <form
           onSubmit={e => searchOnGoogle(e)}
@@ -28,7 +29,7 @@ export function StartMenu({ openApp }: StartMenuProps) {
         >
           <button type='submit'>
             <SearchIcon
-              className='absolute left-3 top-[25%]'
+              className='absolute left-3 top-1/4'
               size={17}
               color='#8A8A8A'
             />
@@ -36,7 +37,7 @@ export function StartMenu({ openApp }: StartMenuProps) {
 
           <input
             placeholder={t('start-menu.placeholder')}
-            className='w-full px-2 pl-10 py-2 bg-zinc-900 outline-none rounded-3xl text-xs placeholder:text-xs'
+            className='w-full pr-2 pl-10 py-2 bg-zinc-900 outline-none rounded-3xl text-xs placeholder:text-xs'
             name='search'
           />
         </form>
@@ -87,24 +88,19 @@ export function StartMenu({ openApp }: StartMenuProps) {
 
           <ul className='grid gap-y-4 overflow-y-scroll max-h-24 sm:grid-cols-2 sm:max-h-[initial] sm:overflow-y-auto'>
             {recommendedProjects.map(project => (
-              <li key={project.id}>
-                <a
-                  href={project.url}
-                  target='_blank'
-                  rel='noreferrer'
-                  className='p-2 sm:w-fit flex items-center gap-2 rounded-2xl hover:bg-white/10 transition-colors duration-300'
+              <StartProject.Root
+                projectUrl={project.url}
+                key={project.id}
+              >
+                {project.icon}
+
+                <StartProject.Info
+                  projectTechnology={project.technology}
+                  projectArea={project.area}
                 >
-                  {project.icon}
-
-                  <div>
-                    <p>{project.name}</p>
-
-                    <p className='text-xs'>
-                      {project.technology} | {project.area}
-                    </p>
-                  </div>
-                </a>
-              </li>
+                  {project.name}
+                </StartProject.Info>
+              </StartProject.Root>
             ))}
           </ul>
         </div>

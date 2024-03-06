@@ -1,12 +1,11 @@
 import { useContext, useState } from 'react';
 
 import { useTranslation } from 'react-i18next';
-
 import { getCurrentDate } from '../utils/getCurrentDate';
 import { getCurrentTime } from '../utils/getCurrentTime';
-
-import { appsIcons, appsNames } from '../data/apps';
+import { appsIcons } from '../data/apps';
 import { AppContext } from '../context/App';
+import { getTranslatedAppName } from '../utils/getTranslatedAppName';
 
 import { XIcon } from 'lucide-react';
 
@@ -59,7 +58,7 @@ export function Taskbar({ onStartClick, isMenuOpen }: TaskbarProps) {
           <div className='hidden relative p-1 bg-white/10 rounded-lg sm:block'>
             <div
               className='flex flex-col items-center gap-1'
-              title={appsNames[openedApp]}
+              title={t(getTranslatedAppName(openedApp))}
             >
               {appsIcons[openedApp]}
 

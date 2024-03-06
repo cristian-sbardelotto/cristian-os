@@ -7,6 +7,7 @@ import { Github, Linkedin } from 'lucide-react';
 import turnOffIcon from '/turn-off-icon.svg';
 import wifiIcon from '/wifi-icon.svg';
 import batteryIcon from '/battery-icon.svg';
+import { Separator } from '../components/Separator';
 
 export function LockScreenPage() {
   const { t } = useTranslation();
@@ -87,7 +88,9 @@ export function LockScreenPage() {
             <Github />
           </a>
 
-          <div className='w-[1px] bg-white h-[15px]' />
+          <div className='h-[15px]'>
+            <Separator orientation='vertical' />
+          </div>
 
           <a
             href='https://linkedin.com/in/cristian-k-sbardelotto'

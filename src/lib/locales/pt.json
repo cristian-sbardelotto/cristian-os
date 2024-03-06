@@ -11,9 +11,9 @@
   "title.start": "Iniciar",
 
   "apps.about-me": "Sobre Mim",
-  "apps.tracks": "Suas Músicas Favoritas",
-  "apps.games": "Meus Jogos Favoritos",
-  "apps.recentProjects": "Meu Trabalho Recente",
+  "apps.tracks": "Suas Top Músicas",
+  "apps.games": "Meu Top Jogos",
+  "apps.recent-projects": "Trabalho Recente",
   "apps.discord": "Meu Discord",
 
   "start-menu.main.pinned-apps": "Apps Fixados",
@@ -25,5 +25,7 @@
   "about-me.paragraph-3": "No momento, minha principal stack inclui Javascript, Typescript, React, NextJS, NodeJS, Prisma, Fastify.",
   "about-me.paragraph-4": "Como um jovem programador, eu tenho alguns hobbies padrão, como jogar videogames, (você pode conferir alguns deles no  App de Games, no Menu Iniciar), escutar muita música, especialmente Eminem (você também pode ver alguma das suas músicas mais ouvidas no App de Tracks), jogar futebol, e, claro, programar.",
   "about-me.paragraph-5": "Quer falar sobre o mundo Tech, jogos, ou esportes? Manda uma mensagem!",
-  "about-me.paragraph-6": "Confira meu portfólio aqui:"
+  "about-me.paragraph-6": "Confira meu portfólio aqui:",
+
+  "tracks.login-button": "Entrar com Spotify"
 }

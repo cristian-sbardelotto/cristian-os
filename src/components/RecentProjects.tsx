@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import { Application } from './Application';
+import { useTranslation } from 'react-i18next';
 
 import { GithubIcon } from 'lucide-react';
 
@@ -14,6 +15,8 @@ type ProjectProps = {
 
 export function RecentProjects() {
   const [projects, setProjects] = useState<ProjectProps[]>([]);
+
+  const { t } = useTranslation();
 
   useEffect(() => {
     async function fetchData() {
@@ -34,7 +37,7 @@ export function RecentProjects() {
 
   return (
     <Application.Root>
-      <Application.Header>My Recent Work</Application.Header>
+      <Application.Header>{t('apps.recent-projects')}</Application.Header>
 
       <Application.Content>
         <ul className='list-none space-y-8 px-2 pt-1 md:px-6'>

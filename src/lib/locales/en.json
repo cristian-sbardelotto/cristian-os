@@ -13,7 +13,7 @@
   "apps.about-me": "About Me",
   "apps.tracks": "Your Top Tracks",
   "apps.games": "My Top Games",
-  "apps.recentProjects": "My Recent Work",
+  "apps.recent-projects": "My Recent Work",
   "apps.discord": "My Discord",
 
   "start-menu.main.pinned-apps": "Pinned Apps",
@@ -25,5 +25,7 @@
   "about-me.paragraph-3": "By now, my go-to tech stack includes Javascript, Typescript, React, NextJS, NodeJS, Prisma, Fastify.",
   "about-me.paragraph-4": "As a young programmer, I got some default hobbies, such as playing videogames (you can check out some of them on Games App, on Start Menu), listen to a lot of music, especially Eminem (you can also see some of your most listened tracks on the Tracks App), playing some football, and of course, programming.",
   "about-me.paragraph-5": "Wanna chat about tech, games, or sports? Shoot me a message!",
-  "about-me.paragraph-6": "Check out my portfolio right here:"
+  "about-me.paragraph-6": "Check out my portfolio right here:",
+
+  "tracks.login-button": "Login with Spotify"
 }

@@ -1,14 +1,16 @@
 import { Application } from './Application';
 import { Button } from './Button';
-
+import { useTranslation } from 'react-i18next';
 import { games } from '../data/games';
 
 import { ExternalLinkIcon } from 'lucide-react';
 
 export function Games() {
+  const { t } = useTranslation();
+
   return (
     <Application.Root>
-      <Application.Header>My Top Games</Application.Header>
+      <Application.Header>{t('apps.games')}</Application.Header>
 
       <Application.Content>
         <ul className='list-none space-y-8 px-4'>

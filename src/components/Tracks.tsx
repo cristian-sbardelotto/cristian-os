@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom';
 
 import { Application } from './Application';
 import { Button } from './Button';
-
+import { useTranslation } from 'react-i18next';
 import { getTopTracks } from '../utils/getSpotifyTracks';
+
 import { ExternalLinkIcon } from 'lucide-react';
 
 type TrackProps = {
@@ -19,6 +20,8 @@ export function Tracks() {
   const token = localStorage.getItem('token');
   const [tracks, setTracks] = useState<TrackProps[] | undefined>([]);
 
+  const { t } = useTranslation();
+
   useEffect(() => {
     async function getTracks() {
       if (!token) return;
@@ -32,7 +35,7 @@ export function Tracks() {
 
   return (
     <Application.Root>
-      <Application.Header>Your Top Tracks</Application.Header>
+      <Application.Header>{t('apps.tracks')}</Application.Header>
 
       <Application.Content>
         {token && token !== '' ? (
@@ -83,7 +86,7 @@ export function Tracks() {
         ) : (
           <Link to='/au'>
             <Button className='w-fit px-4 gap-2 bg-green-500 text-zinc-900 font-bold rounded-full border-none'>
-              Login with Spotify{' '}
+              {t('tracks.login-button')}{' '}
               <img
                 src='/spotify-icon.svg'
                 alt='Spotify Icons'

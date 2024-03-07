@@ -9,7 +9,12 @@ import { getTopTracks } from '../utils/getSpotifyTracks';
 
 type TrackProps = {
   name: string;
-  artists: string;
+  artists: Array<{
+    name: string;
+    external_urls: {
+      spotify: string;
+    };
+  }>;
   albumImage: string;
   url: string;
   id: string;
@@ -41,7 +46,7 @@ export function Tracks() {
           <ul className='list-none space-y-8 px-6'>
             {tracks?.map(track => (
               <li
-                className='flex items-center justify-between'
+                className='flex justify-between'
                 key={track.id}
               >
                 <div className='flex items-center gap-6'>
@@ -51,21 +56,49 @@ export function Tracks() {
                     className='h-20 lg:h-24'
                   />
 
-                  <div className='h-full flex flex-col justify-around'>
+                  <div className='h-full flex flex-col justify-between gap-1'>
+                    <div className='flex flex-col gap-1'>
+                      <a
+                        href={track.url}
+                        target='_blank'
+                        rel='noreferrer'
+                        className='hover:underline'
+                      >
+                        <h4 className='group-hover:underline font-semibold break-words lg:text-lg'>
+                          {track.name}
+                        </h4>
+                      </a>
+
+                      <div className='flex gap-2 flex-wrap'>
+                        {track.artists.map(artist => (
+                          <p
+                            key={artist.name}
+                            className='text-sm font-light break-words'
+                          >
+                            <a
+                              href={artist.external_urls.spotify}
+                              target='_blank'
+                              rel='noreferrer'
+                              className='bg-gray-50/5 rounded-md py-[1px] px-1 hover:bg-gray-50/10 transition-all'
+                            >
+                              {artist.name}
+                            </a>
+                          </p>
+                        ))}
+                      </div>
+                    </div>
+
                     <a
-                      href={track.url}
+                      href='https://spotify.com/'
                       target='_blank'
                       rel='noreferrer'
-                      className='hover:underline'
                     >
-                      <h4 className='group-hover:underline font-semibold break-words lg:text-lg'>
-                        {track.name}
-                      </h4>
+                      <img
+                        src='/spotify-logo.png'
+                        className='h-4 sm:h-5 xl:h-7'
+                        alt='Spotify Logo'
+                      />
                     </a>
-
-                    <p className='text-sm font-light break-words'>
-                      {track.artists}
-                    </p>
                   </div>
                 </div>
 

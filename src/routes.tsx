@@ -27,7 +27,7 @@ export function Router() {
 
         <Route
           element={<SpotifyAuth />}
-          path='/au'
+          path='/callback'
         />
 
         <Route

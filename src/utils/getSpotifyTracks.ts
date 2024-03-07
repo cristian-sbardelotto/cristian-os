@@ -1,6 +1,11 @@
 type TracksProps = {
   name: string;
-  artists: Array<{ name: string }>;
+  artists: Array<{
+    name: string;
+    external_urls: {
+      spotify: string;
+    };
+  }>;
   album: {
     images: {
       url: string;
@@ -36,8 +41,8 @@ async function fetchSpotifyApi(endpoint: string, method: string) {
     if (data.status === 401) {
       localStorage.removeItem('token');
       location.href = devMode
-        ? `${import.meta.env.VITE_DEV_URL}/au`
-        : 'https://cristian-os.vercel.app/au';
+        ? `${import.meta.env.VITE_DEV_URL}/callback`
+        : 'https://cristian-os.vercel.app/callback';
       return;
     }
 
@@ -52,8 +57,8 @@ export async function getTopTracks() {
 
   if (!token) {
     location.href = devMode
-      ? `${import.meta.env.VITE_DEV_URL}/au`
-      : 'https://cristian-os.vercel.app/au';
+      ? `${import.meta.env.VITE_DEV_URL}/callback`
+      : 'https://cristian-os.vercel.app/callback';
     return;
   }
 
@@ -61,11 +66,11 @@ export async function getTopTracks() {
     'v1/me/top/tracks?time_range=short_term&limit=5',
     'GET'
   )) as TopTracksProps;
-
+  //
   return topTracks.map(track => {
     return {
       name: track.name,
-      artists: track.artists.map(artist => artist.name).join(', '),
+      artists: track.artists,
       albumImage: track.album.images[0].url,
       url: track.external_urls.spotify,
       id: track.id,

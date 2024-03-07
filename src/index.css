@@ -37,3 +37,7 @@ body {
 ::-webkit-scrollbar-track {
   background-color: transparent;
 }
+
+.about-me-paragraph {
+  @apply lg:text-xl lg:leading-relaxed;
+}

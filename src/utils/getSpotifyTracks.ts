@@ -36,8 +36,8 @@ async function fetchSpotifyApi(endpoint: string, method: string) {
     if (data.status === 401) {
       localStorage.removeItem('token');
       location.href = devMode
-        ? `${import.meta.env.VITE_DEV_URL}/au`
-        : 'https://cristian-os.vercel.app/au';
+        ? `${import.meta.env.VITE_DEV_URL}/callback`
+        : 'https://cristian-os.vercel.app/callback';
       return;
     }
 
@@ -52,8 +52,8 @@ export async function getTopTracks() {
 
   if (!token) {
     location.href = devMode
-      ? `${import.meta.env.VITE_DEV_URL}/au`
-      : 'https://cristian-os.vercel.app/au';
+      ? `${import.meta.env.VITE_DEV_URL}/callback`
+      : 'https://cristian-os.vercel.app/callback';
     return;
   }
 

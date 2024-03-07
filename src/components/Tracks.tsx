@@ -74,7 +74,7 @@ export function Tracks() {
             ))}
           </ul>
         ) : (
-          <Link to='/au'>
+          <Link to='/callback'>
             <Button className='w-fit px-4 gap-2 bg-green-500 text-zinc-900 font-bold rounded-full border-none hover:bg-green-500 hover:brightness-75 hover:shadow-none'>
               {t('tracks.login-button')}{' '}
               <img

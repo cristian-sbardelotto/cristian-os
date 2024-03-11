@@ -2,6 +2,8 @@
 
 # 💻Cristian OS
 
+[README PT-BR](./README-pt.md)
+
 This project simulates a Operational System based on Windows. The application tells a little more about me, my hobbies and my life.
 It also integrates with [Spotify Web Api](https://developer.spotify.com/documentation/web-api) to get your top-5 most listened tracks, and also uses [Github API](https://docs.github.com/en/rest) to show the recent repositories that I'm working on.
 

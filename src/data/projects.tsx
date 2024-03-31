@@ -1,15 +1,15 @@
 import { ReactNode } from 'react';
 import { v4 as randomUUID } from 'uuid';
 
-import { Luggage, Plane, ShoppingCart, Folder } from 'lucide-react';
+import { Luggage, Smile, ShoppingCart, ListTodo } from 'lucide-react';
 
 type RecommendedProjectProps = {
   id: string;
   name: string;
   url: string;
   icon: ReactNode;
+  language: string;
   technology: string;
-  area: 'Frontend' | 'Backend' | 'Fullstack';
 };
 
 export const recommendedProjects: RecommendedProjectProps[] = [
@@ -23,46 +23,46 @@ export const recommendedProjects: RecommendedProjectProps[] = [
         className='sm:h-9 sm:w-9'
       />
     ),
-    technology: 'Typescript',
-    area: 'Frontend',
+    language: 'Typescript',
+    technology: 'Next.js',
   },
   {
     id: randomUUID(),
-    name: 'FSW Store',
-    url: 'https://github.com/cristian-sbardelotto/fsw-store',
+    name: 'Meme Creator',
+    url: 'https://github.com/cristian-sbardelotto/meme-creator',
+    icon: (
+      <Smile
+        size={28}
+        className='sm:h-9 sm:w-9'
+      />
+    ),
+    technology: 'React',
+    language: 'Typescript',
+  },
+  {
+    id: randomUUID(),
+    name: 'ImagineShop',
+    url: 'https://github.com/cristian-sbardelotto/imagineshop',
     icon: (
       <ShoppingCart
         size={28}
         className='sm:h-9 sm:w-9'
       />
     ),
-    technology: 'Typescript',
-    area: 'Fullstack',
+    language: 'Typescript',
+    technology: 'Next.js',
   },
   {
     id: randomUUID(),
-    name: 'Studion Backend',
-    url: 'https://github.com/cristian-sbardelotto/studion-backend',
+    name: 'Todo List',
+    url: 'https://github.com/cristian-sbardelotto/to-do-list',
     icon: (
-      <Plane
+      <ListTodo
         size={28}
         className='sm:h-9 sm:w-9'
       />
     ),
-    technology: 'Typescript',
-    area: 'Backend',
-  },
-  {
-    id: randomUUID(),
-    name: 'Blog Sbardelotto',
-    url: 'https://github.com/cristian-sbardelotto/blog-sbardelotto',
-    icon: (
-      <Folder
-        size={28}
-        className='sm:h-9 sm:w-9'
-      />
-    ),
-    technology: 'Typescript',
-    area: 'Fullstack',
+    technology: 'React',
+    language: 'Typescript',
   },
 ];

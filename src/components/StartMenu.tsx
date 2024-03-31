@@ -96,7 +96,7 @@ export function StartMenu({ openApp }: StartMenuProps) {
 
                 <StartProject.Info
                   projectTechnology={project.technology}
-                  projectArea={project.area}
+                  projectLanguage={project.language}
                 >
                   {project.name}
                 </StartProject.Info>

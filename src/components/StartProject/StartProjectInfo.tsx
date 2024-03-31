@@ -3,20 +3,20 @@ import { ReactNode } from 'react';
 type StartProjectInfoProps = {
   children: ReactNode;
   projectTechnology: string;
-  projectArea: string;
+  projectLanguage: string;
 };
 
 export function StartProjectInfo({
   children,
   projectTechnology,
-  projectArea,
+  projectLanguage,
 }: StartProjectInfoProps) {
   return (
     <div>
       <p>{children}</p>
 
       <p className='text-xs'>
-        {projectTechnology} | {projectArea}
+        {projectTechnology} | {projectLanguage}
       </p>
     </div>
   );

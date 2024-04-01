@@ -24,11 +24,11 @@ export function AboutMe() {
           {t('about-me.paragraph-6')}{' '}
           <a
             className='underline hover:brightness-50 transition-all duration-500'
-            href='https://bit.ly/portfolioSbardelotto'
+            href='https://portfolio-chi-lemon-51.vercel.app'
             target='_blank'
             rel='noreferrer'
           >
-            bit.ly/portfolioSbardelotto
+            portfolio-chi-lemon-51.vercel.app
           </a>
         </p>
       </Application.Content>

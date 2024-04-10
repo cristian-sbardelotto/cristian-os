@@ -9,7 +9,7 @@ It also integrates with [Spotify Web Api](https://developer.spotify.com/document
 
 You can know something about me, and have a little fun browsing by the application!
 
-> ⚠️ Feel free to [contact me](https://portfolio-cristian-sbardelotto.vercel.app/contact/), and share your **_feedback_** and **_insights_**, or report a **_bug_**!
+> ⚠️ Feel free to [contact me](https://portfolio-chi-lemon-51.vercel.app/contact/), and share your **_feedback_** and **_insights_**, or report a **_bug_**!
 
 <p>
   <a href="#technologies">Technologies</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;

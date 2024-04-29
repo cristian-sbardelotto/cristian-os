@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 import { v4 as randomUUID } from 'uuid';
 
-import { Luggage, Smile, ShoppingCart, ListTodo } from 'lucide-react';
+import { Luggage, Smile, ListTodo, Zap } from 'lucide-react';
 
 type RecommendedProjectProps = {
   id: string;
@@ -28,6 +28,19 @@ export const recommendedProjects: RecommendedProjectProps[] = [
   },
   {
     id: randomUUID(),
+    name: 'Quizzed',
+    url: 'https://github.com/cristian-sbardelotto/quizzed',
+    icon: (
+      <Zap
+        size={28}
+        className='sm:h-9 sm:w-9'
+      />
+    ),
+    language: 'Typescript',
+    technology: 'React',
+  },
+  {
+    id: randomUUID(),
     name: 'Meme Creator',
     url: 'https://github.com/cristian-sbardelotto/meme-creator',
     icon: (
@@ -38,19 +51,6 @@ export const recommendedProjects: RecommendedProjectProps[] = [
     ),
     technology: 'React',
     language: 'Typescript',
-  },
-  {
-    id: randomUUID(),
-    name: 'ImagineShop',
-    url: 'https://github.com/cristian-sbardelotto/imagineshop',
-    icon: (
-      <ShoppingCart
-        size={28}
-        className='sm:h-9 sm:w-9'
-      />
-    ),
-    language: 'Typescript',
-    technology: 'Next.js',
   },
   {
     id: randomUUID(),

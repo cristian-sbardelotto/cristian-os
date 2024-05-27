@@ -11,7 +11,7 @@
   "title.start": "Iniciar",
 
   "apps.about-me": "Sobre Mim",
-  "apps.tracks": "Suas Top Músicas",
+  "apps.tracks": "Meu Top Músicas",
   "apps.games": "Meu Top Jogos",
   "apps.recent-projects": "Trabalho Recente",
   "apps.discord": "Meu Discord",
@@ -23,9 +23,7 @@
   "about-me.paragraph-1": "Eai! Eu sou Cristian Sbardelotto, um desenvolvedor Frontend.",
   "about-me.paragraph-2": "Eu comecei a minha jornada na programação Web em Agosto de 2022 e meu objetivo atual é alcançar meu primeiro emprego, e eventualmente, atingir o posto de Tech Lead.",
   "about-me.paragraph-3": "No momento, minha principal stack inclui HTML, CSS, Javascript, Typescript, React, Next.js, e TailwindCSS.",
-  "about-me.paragraph-4": "Como um jovem programador, eu tenho alguns hobbies padrão, como jogar videogames, (você pode conferir alguns deles no  App de Games, no Menu Iniciar), escutar muita música, especialmente Eminem (você também pode ver alguma das suas músicas mais ouvidas no App de Tracks), jogar futebol, e, claro, programar.",
+  "about-me.paragraph-4": "Como um jovem programador, eu tenho alguns hobbies padrão, como jogar videogames, (você pode conferir alguns deles no  App de Games, no Menu Iniciar), escutar muita música, especialmente Eminem (você também pode ver alguma das minhas músicas favoritas no App de Tracks), jogar futebol, e, claro, programar.",
   "about-me.paragraph-5": "Quer falar sobre o mundo Tech, jogos, ou esportes? Manda uma mensagem!",
-  "about-me.paragraph-6": "Confira meu portfólio aqui:",
-
-  "tracks.login-button": "Entrar com Spotify"
+  "about-me.paragraph-6": "Confira meu portfólio aqui:"
 }

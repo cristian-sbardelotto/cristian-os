@@ -3,7 +3,7 @@
 # 💻Cristian OS
 
 Esse projeto simula um Sistema Operacional baseado no Windows. A aplicação fala um pouco sobre mim, meus _hobbies_, e minha vida.
-Ele também se integra com a [Web Api do Spotify](https://developer.spotify.com/documentation/web-api) para pegar suas 5 músicas mais ouvidas, e também usa a [Api do Github](https://docs.github.com/en/rest) para mostrar os repositórios mais recentes em que estou trabalhando.
+Ele também se integra com a [Api do Github](https://docs.github.com/en/rest) para mostrar os repositórios mais recentes em que estou trabalhando.
 
 Você pode aprender algo sobre mim, e se divertir um pouco navegando na aplicação!
 
@@ -38,7 +38,6 @@ Durante o desenvolvimento, eu descobri novas coisas, como:
 
 - Utilização da [biblioteca i18n](https://react.i18next.com/)
 - Composition Pattern -> [checar exemplo](./src/components/Application/)
-- Utilização da [Web Api do Spotify](https://developer.spotify.com/documentation/web-api)
 
 <div id='installation'></div>
 
@@ -59,8 +58,6 @@ yarn
 # ou
 pnpm install
 ```
-
-Então, preencha o arquivo `.env` como no [arquivo de exemplo](./.env.example).
 
 Para **rodar o projeto** no seu navegador, use:
 

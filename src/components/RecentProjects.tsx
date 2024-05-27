@@ -1,39 +1,13 @@
-import { useEffect, useState } from 'react';
-
 import { Application } from './Application';
 import { useTranslation } from 'react-i18next';
 
 import { GithubIcon } from 'lucide-react';
-
-type ProjectProps = {
-  id: string | number;
-  name: string;
-  html_url: string;
-  description: string;
-  topics: string[];
-};
+import { useFetchRecentProjects } from '../hooks/useFetchRecentProjects';
 
 export function RecentProjects() {
-  const [projects, setProjects] = useState<ProjectProps[]>([]);
+  const { projects } = useFetchRecentProjects();
 
   const { t } = useTranslation();
-
-  useEffect(() => {
-    async function fetchData() {
-      const response = await fetch(
-        'https://api.github.com/users/cristian-sbardelotto/repos?sort=updated'
-      );
-      const data = (await response.json()) as ProjectProps[];
-
-      const recentUpdatedProjects = data
-        .filter(project => project.name !== 'cristian-sbardelotto')
-        .slice(0, 5); // 5 most recent repos on Github, excluding my account repo
-
-      setProjects(recentUpdatedProjects);
-    }
-
-    fetchData();
-  }, []);
 
   return (
     <Application.Root>

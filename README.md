@@ -5,7 +5,7 @@
 [README PT-BR](./README-pt.md)
 
 This project simulates a Operational System based on Windows. The application tells a little more about me, my hobbies and my life.
-It also integrates with [Spotify Web Api](https://developer.spotify.com/documentation/web-api) to get your top-5 most listened tracks, and also uses [Github API](https://docs.github.com/en/rest) to show the recent repositories that I'm working on.
+It also integrates with [Github API](https://docs.github.com/en/rest) to show the recent repositories that I'm working on.
 
 You can know something about me, and have a little fun browsing by the application!
 
@@ -40,7 +40,6 @@ During the development, I've discovered new things, such as:
 
 - Usage of [i18n library](https://react.i18next.com/)
 - Composition Pattern -> [check example](./src/components/Application/)
-- Usage of [Spotify Web Api](https://developer.spotify.com/documentation/web-api)
 
 <div id='installation'></div>
 
@@ -61,8 +60,6 @@ yarn
 #or
 pnpm install
 ```
-
-Then, fill the `.env` file like the [example file](./.env.example).
 
 To **run the project** on your browser, use:
 

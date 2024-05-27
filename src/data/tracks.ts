@@ -1,5 +1,9 @@
 import { v4 as randomUUID } from 'uuid';
 
+import eightMile from '/tracks/8-mile.jpg';
+import killshot from '/tracks/killshot.jpg';
+import theMarshallMathersLP from '/tracks/the-marshall-mathers-lp.jpg';
+
 type TrackProps = {
   id: string;
   name: string;
@@ -21,7 +25,7 @@ export const tracks: TrackProps[] = [
         url: 'https://open.spotify.com/artist/7dGJo4pcD2V6oG8kP0tJRR',
       },
     ],
-    albumImage: 'https://github.com/cristian-sbardelotto.png',
+    albumImage: eightMile,
     url: 'https://open.spotify.com/track/5NmL2zxnlt9GiTB2TQbvFM?si=0c8a533167684540',
   },
   {
@@ -33,7 +37,7 @@ export const tracks: TrackProps[] = [
         url: 'https://open.spotify.com/artist/7dGJo4pcD2V6oG8kP0tJRR',
       },
     ],
-    albumImage: 'https://github.com/cristian-sbardelotto.png',
+    albumImage: eightMile,
     url: 'https://open.spotify.com/track/1v7L65Lzy0j0vdpRjJewt1?si=e15fc07cfe5a4440',
   },
   {
@@ -45,7 +49,7 @@ export const tracks: TrackProps[] = [
         url: 'https://open.spotify.com/artist/7dGJo4pcD2V6oG8kP0tJRR',
       },
     ],
-    albumImage: 'https://github.com/cristian-sbardelotto.png',
+    albumImage: killshot,
     url: 'https://open.spotify.com/track/1jo3TwNGCXfNdB5uba3ZVv?si=8b4f68d0eda241ee',
   },
   {
@@ -57,7 +61,7 @@ export const tracks: TrackProps[] = [
         url: 'https://open.spotify.com/artist/7dGJo4pcD2V6oG8kP0tJRR',
       },
     ],
-    albumImage: 'https://github.com/cristian-sbardelotto.png',
+    albumImage: theMarshallMathersLP,
     url: 'https://open.spotify.com/track/23wfXwnsPZYe5A1xXRHb3J?si=8ca0b9259a174574',
   },
   {
@@ -69,7 +73,7 @@ export const tracks: TrackProps[] = [
         url: 'https://open.spotify.com/artist/7dGJo4pcD2V6oG8kP0tJRR',
       },
     ],
-    albumImage: 'https://github.com/cristian-sbardelotto.png',
+    albumImage: theMarshallMathersLP,
     url: 'https://open.spotify.com/track/5eGEc27nnhtmcOh6RC890a?si=35aa287f1de44bef',
   },
 ];
